@@ -510,6 +510,9 @@ function bin_marketplan_reset($input)
 		}
 		// Klaim Perusahaan
 		bin_marketplan_execute("UPDATE `bin_balance_type` SET `active`=1 WHERE `id`=13");
+
+		// Eksekusi semua function yang ada di semua module dengan nama function [namamodule]_bin_marketplan_reset
+		user_call_func(__FUNCTION__, $input);
 		return array(
 			'plan_a'  => $config,
 			'reward'  => $input['reward'],
