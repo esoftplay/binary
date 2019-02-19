@@ -305,7 +305,7 @@ function bin_marketplan_reset($input)
 			(10,1,1,0,'biaya operasional','pengeluaran biaya untuk keperluan [operasional]','pengeluaran biaya untuk keperluan [operasional]',1),
 			(11,1,0,0,'kualifikasi reward','ID [username] kualifikasi atas [reward]','ID [username] kualifikasi atas [reward]',1),
 			(12,1,1,0,'penerimaan reward','ID [username] telah mendapatkan [reward]','ID [username] telah mendapatkan [reward]',1),
-			(13,0,0,1,'Klaim Perusahaan','klaim perusahaan atas bonus dan reward dari [member]','klaim perusahaan atas bonus dan reward dari [member]',0)");
+			(13,0,0,1,'Klaim Perusahaan','klaim perusahaan atas bonus dan reward dari [member]','klaim perusahaan atas bonus dan reward dari [member]',1)");
 		}
 		if (!empty($input['level']))
 		{
@@ -509,7 +509,7 @@ function bin_marketplan_reset($input)
 			bin_marketplan_execute("UPDATE `bin_balance_type` SET `active`=0 WHERE `id`=12");
 		}
 		// Klaim Perusahaan
-		bin_marketplan_execute("UPDATE `bin_balance_type` SET `active`=0 WHERE `id`=13");
+		bin_marketplan_execute("UPDATE `bin_balance_type` SET `active`=1 WHERE `id`=13");
 		return array(
 			'plan_a'  => $config,
 			'reward'  => $input['reward'],
