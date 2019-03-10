@@ -600,7 +600,7 @@ CREATE TABLE `bbc_user_group` (
   KEY `is_admin` (`is_admin`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-INSERT INTO `bbc_user_group` VALUES (1,'root','this is the highest degree of user level in system',',all,',',all,',0,0,1),(2,'administrator','administrator',',4,5,6,8,9,10,11,12,13,14,15,16,17,28,29,30,31,32,33,34,35,','',0,0,1),(3,'Member','Member MLM',',all,','',100,1,0),(4,'Publisher','lowest level of member site',',101,103,105,','',0,0,0);
+INSERT INTO `bbc_user_group` VALUES (1,'root','this is the highest degree of user level in system',',all,',',all,',2,1,1),(2,'administrator','administrator',',4,5,6,8,9,10,11,12,13,14,15,16,17,28,29,30,31,32,33,34,35,','',1,1,1),(3,'Member','Member MLM',',all,','',100,1,0),(4,'Publisher','lowest level of member site',',101,103,105,','',0,0,0);
 DROP TABLE IF EXISTS `bin`;
 CREATE TABLE `bin` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
