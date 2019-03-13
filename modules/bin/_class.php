@@ -177,7 +177,7 @@ class bin_class
 			$icon = ($level >= $this->maxlevel) ? 'down' : 'up';
 			$cls  = $data['active'] ? 'success' : 'danger';
 			?>
-			<div class="alert-<?php echo $cls; ?>" title="<?php echo $data['username'].' ('.$data['name'].')' ?>">
+			<div class="alert-<?php echo $cls; ?> <?php echo !empty($upline) ? "popup" : ""; ?>" title="<?php echo $data['username'].' ('.$data['name'].')' ?>">
 				<?php
 				if (strlen($data['username']) > 9)
 				{
@@ -193,8 +193,19 @@ class bin_class
 				?>
 				<small><?php echo $data['name'] ?></small>
 				<small><?php echo $this->format($data['created']); ?></small>
-				<!-- <small><?php echo money($data['depth_left'], true).' | '.money($data['depth_right'], true); ?></small><br /> -->
-				<small class="expander" data-id="<?php echo $data['id']; ?>"><?php echo money($data['total_left'], true); ?> <i class="glyphicon glyphicon-collapse-<?php echo $icon; ?>"></i> <?php echo money($data['total_right'], true); ?></small>
+				<?php
+				if (!empty($upline))
+				{
+					?>
+					<!-- <small><?php echo money($data['depth_left'], true).' | '.money($data['depth_right'], true); ?></small><br /> -->
+					<small class="expander" data-id="<?php echo $data['id']; ?>"><?php echo money($data['total_left'], true); ?> <i class="glyphicon glyphicon-collapse-<?php echo $icon; ?>"></i> <?php echo money($data['total_right'], true); ?></small>
+					<?php
+				}else{
+					?>
+					<small>Upline</small>
+					<?php
+				}
+				?>
 			</div>
 			<?php
 			if (!$this->is_ajax)
