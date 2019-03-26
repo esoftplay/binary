@@ -41,7 +41,7 @@ function bin_downline_list($bin_id)
 					'level'    => money($row['current']['depth_upline']-$Bbc->member['depth_upline']),
 					'created'  => date('M jS, Y', strtotime($row['current']['created']))
 			);
-			bin_downline_list($row['current']['user_id']);
+			bin_downline_list($row['current']['id']);
 		}
 	}
 }
