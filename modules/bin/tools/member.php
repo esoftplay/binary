@@ -171,7 +171,7 @@ if (empty($new))
 					?>
 					<div class="form-group">
 						<label>Tipe Serial</label>
-						<select name="type_id" class="form-control"><?php echo createOption($r_type); ?></select>
+						<select name="type_id" class="form-control"><?php echo createOption($r_type, 2); ?></select>
 					</div>
 					<?php
 				}

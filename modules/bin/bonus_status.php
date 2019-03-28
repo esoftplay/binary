@@ -14,10 +14,12 @@ if (empty($id))
 {
 	echo msg('Maaf, data yang anda akses bukan termasuk dalam jaringan anda', 'danger');
 }else{
-	$r_type  = bin_bonus_list();
-	$r_bonus = $db->getAll("SELECT * FROM `bin_bonus` WHERE `bin_id`={$id}");
-	$tables  = array();
-	$total   = 0;
+	$r_type          = bin_bonus_list();
+	$r_type_withdraw = $db->getAssoc('SELECT `id`, `name`, `message` FROM `bin_balance_type` WHERE `id`=2');
+	$r_type          = $r_type + $r_type_withdraw; // untuk merge array
+	$r_bonus         = $db->getAll("SELECT * FROM `bin_bonus` WHERE `bin_id`={$id}");
+	$tables          = array();
+	$total           = 0;
 	foreach ($r_bonus as $bonus)
 	{
 		if ($bonus['credit'])
