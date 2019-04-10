@@ -10,17 +10,19 @@ if (config('plan_a', 'serial_use')=='1')
 	$form->search->input->type_id->setReferenceTable('`bin_serial_type` ORDER BY `id` ASC');
 	$form->search->input->type_id->setReferenceField( 'name', 'id' );
 }
+if (_ADMIN)
+{
+	$form->search->addInput('used','select');
+	$form->search->input->used->addOption('--pilih status--', '');
+	$form->search->input->used->addOption('Terpakai', '1');
+	$form->search->input->used->addOption('Belum Terpakai', '0');
 
-$form->search->addInput('used','select');
-$form->search->input->used->addOption('--pilih status--', '');
-$form->search->input->used->addOption('Terpakai', '1');
-$form->search->input->used->addOption('Belum Terpakai', '0');
+	$form->search->addInput('keyword','keyword');
+	$form->search->input->keyword->setTitle('Masukkan Serial ID');
+	$form->search->input->keyword->addSearchField('code', false);
 
-$form->search->addInput('keyword','keyword');
-$form->search->input->keyword->setTitle('Masukkan Serial ID');
-$form->search->input->keyword->addSearchField('code', false);
-
-$form->search->addExtraField('active', 1);
+	$form->search->addExtraField('active', 1);
+}
 
 $add_sql = $form->search->action();
 $keyword = $form->search->keyword();
@@ -84,7 +86,7 @@ if (!isset($keyword['used']))
 
 $form->roll->setDeleteTool(false);
 $form->roll->setSaveTool(false);
-echo $form->roll->getForm();
+echo _ADMIN ? $form->roll->getForm() : '';
 if (config('plan_a', 'serial_use')!='1')
 {
 	$keyword['type_id'] = 1; // pasti ID nya 1 karena setiap reset autoincrement di null kan

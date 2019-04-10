@@ -96,6 +96,9 @@ switch( $Bbc->mod['task'] )
 	case 'fix':
 		include 'fix.php';
 		break;
+	case 'binfix':
+		include 'binfix.php';
+		break;
 
 	default:
 		echo 'Invalid action <b>'.$Bbc->mod['task'].'</b> has been received...';

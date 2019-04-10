@@ -71,7 +71,7 @@ if (!empty($user->id) && _ADMIN=='')
 					</div>
 					<div class="form-group location_id">
 						<label><?php echo lang('Lokasi') ?></label>
-						<input value="<?php echo @$_POST['params']['location_id']; ?>" name="params[location_id]" class="form-control" req="any true" rel="ac" type="text" placeholder="<?php echo lang('Kecamatan / Kota') ?>" data-token="<?php echo encode(json_encode($location_token)); ?>" />
+						<input value="<?php echo @$_POST['params']['location_id']; ?>" name="params[location_id]" class="form-control" req="any true" rel="ac" type="text" placeholder="<?php echo lang('Kecamatan / Kota') ?>" data-autoFill="true" data-token="<?php echo encode(json_encode($location_token)); ?>" />
 						<p class="help-block"> <?php echo lang($custom_fields['location_id']['tips']) ?></p>
 					</div>
 					<div class="form-group">

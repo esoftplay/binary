@@ -900,6 +900,78 @@ CREATE TABLE `bin_level` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 INSERT INTO `bin_level` VALUES (1,'reguler',2,1,1,0),(2,'starter',8,2,2,0),(3,'profesional',16,3,3,0),(4,'advance',32,4,4,0);
+DROP TABLE IF EXISTS `bin_list_down_left`;
+CREATE TABLE `bin_list_down_left` (
+  `list_id` bigint(255) unsigned NOT NULL AUTO_INCREMENT,
+  `bin_id` bigint(20) unsigned DEFAULT NULL,
+  `user_bin_id` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`list_id`),
+  KEY `bin_id` (`bin_id`),
+  KEY `user_bin_id` (`user_bin_id`),
+  CONSTRAINT `bin_list_down_left_ibfk_1` FOREIGN KEY (`bin_id`) REFERENCES `bin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `bin_list_down_left_ibfk_2` FOREIGN KEY (`user_bin_id`) REFERENCES `bin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `bin_list_down_line`;
+CREATE TABLE `bin_list_down_line` (
+  `list_id` bigint(255) unsigned NOT NULL AUTO_INCREMENT,
+  `bin_id` bigint(20) unsigned DEFAULT NULL,
+  `user_bin_id` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`list_id`),
+  KEY `bin_id` (`bin_id`),
+  KEY `user_bin_id` (`user_bin_id`),
+  CONSTRAINT `bin_list_down_line_ibfk_1` FOREIGN KEY (`bin_id`) REFERENCES `bin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `bin_list_down_line_ibfk_2` FOREIGN KEY (`user_bin_id`) REFERENCES `bin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `bin_list_down_right`;
+CREATE TABLE `bin_list_down_right` (
+  `list_id` bigint(255) unsigned NOT NULL AUTO_INCREMENT,
+  `bin_id` bigint(20) unsigned DEFAULT NULL,
+  `user_bin_id` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`list_id`),
+  KEY `bin_id` (`bin_id`),
+  KEY `user_bin_id` (`user_bin_id`),
+  CONSTRAINT `bin_list_down_right_ibfk_1` FOREIGN KEY (`bin_id`) REFERENCES `bin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `bin_list_down_right_ibfk_2` FOREIGN KEY (`user_bin_id`) REFERENCES `bin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `bin_list_down_sponsor`;
+CREATE TABLE `bin_list_down_sponsor` (
+  `list_id` bigint(255) unsigned NOT NULL AUTO_INCREMENT,
+  `bin_id` bigint(20) unsigned DEFAULT NULL,
+  `user_bin_id` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`list_id`),
+  KEY `bin_id` (`bin_id`),
+  KEY `user_bin_id` (`user_bin_id`),
+  CONSTRAINT `bin_list_down_sponsor_ibfk_1` FOREIGN KEY (`bin_id`) REFERENCES `bin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `bin_list_down_sponsor_ibfk_2` FOREIGN KEY (`user_bin_id`) REFERENCES `bin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `bin_list_up_line`;
+CREATE TABLE `bin_list_up_line` (
+  `list_id` bigint(255) unsigned NOT NULL AUTO_INCREMENT,
+  `bin_id` bigint(20) unsigned DEFAULT NULL,
+  `user_bin_id` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`list_id`),
+  KEY `bin_id` (`bin_id`),
+  KEY `user_bin_id` (`user_bin_id`),
+  CONSTRAINT `bin_list_up_line_ibfk_1` FOREIGN KEY (`bin_id`) REFERENCES `bin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `bin_list_up_line_ibfk_2` FOREIGN KEY (`user_bin_id`) REFERENCES `bin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `bin_list_up_sponsor`;
+CREATE TABLE `bin_list_up_sponsor` (
+  `list_id` bigint(255) unsigned NOT NULL AUTO_INCREMENT,
+  `bin_id` bigint(20) unsigned DEFAULT NULL,
+  `user_bin_id` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`list_id`),
+  KEY `bin_id` (`bin_id`),
+  KEY `user_bin_id` (`user_bin_id`),
+  CONSTRAINT `bin_list_up_sponsor_ibfk_1` FOREIGN KEY (`bin_id`) REFERENCES `bin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `bin_list_up_sponsor_ibfk_2` FOREIGN KEY (`user_bin_id`) REFERENCES `bin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 DROP TABLE IF EXISTS `bin_location`;
 CREATE TABLE `bin_location` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,

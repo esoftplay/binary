@@ -1,5 +1,4 @@
 <?php  if (!defined('_VALID_BBC')) exit('No direct script access allowed');
-$user_field = $db->getAssoc('SELECT `id`, `title` FROM `bbc_user_field` WHERE `active` = 1');
 
 if (!empty($_POST))
 {
@@ -20,8 +19,39 @@ if (!empty($_POST))
 	}
 }
 
-$fields = config('bin_fields');
-$r_field = user_field_group(config('plan_a', 'group_id'));
+$group_id = config('plan_a', 'group_id');
+$fields   = config('bin_fields');
+$r_field  = array_merge(
+	array(
+		array(
+			'id'        => -1,
+			'group_id'  => $group_id,
+			'type'      => 'text',
+			'title'     => 'name',
+			'tips'      => '',
+			'checked'   => 'any',
+			'attr'      => '',
+			'default'   => '',
+			'option'    => '',
+			'orderby'   => -1,
+			'mandatory' => 1,
+			'active'    => 1,
+		),
+		array(
+			'id'        => 0,
+			'group_id'  => $group_id,
+			'type'      => 'text',
+			'title'     => 'email',
+			'tips'      => '',
+			'checked'   => 'any',
+			'attr'      => '',
+			'default'   => '',
+			'option'    => '',
+			'orderby'   => -1,
+			'mandatory' => 1,
+			'active'    => 1,
+		)
+	), user_field_group($group_id));
 link_js(_LIB.'pea/includes/formIsRequire.js');
 ?>
 
@@ -36,7 +66,7 @@ link_js(_LIB.'pea/includes/formIsRequire.js');
 					<thead>
 						<tr>
 							<th>Input Field</th>
-							<th>Maksimum</th>
+							<th>Max. Penggunaan</th>
 							<th>Editable</th>
 						</tr>
 					</thead>

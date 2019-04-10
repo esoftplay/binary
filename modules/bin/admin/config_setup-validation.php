@@ -30,9 +30,7 @@ if (file_exists($tmpfile))
 			if ($is_ok)
 			{
 				$db->Execute('COMMIT');
-				@rename(bin_path(), _CACHE.'files_'.date('YmdHis'));
 				set_config('plan_a', $config['plan_a']);
-				bin_path_create(1, $config['plan_a']['prefix'].'100001');
 				$db->cache_clean();
 				if (!empty($_POST['uri'])) // Dari halaman uji market
 				{

@@ -8,7 +8,6 @@ function bin_up($config, $current, $sponsor, $upline)
 {
 	global $db;
 	bin_check($config, $current, $sponsor, $upline);
-	bin_path_create($current['id'], $current['username']);
 	/* HAPUS bin_matching YANG SUDAH EXPIRE UNTUK MERINGANKAN PROSES */
 	$del_sql = '';
 	if (!empty($config['flushwait']))
@@ -43,22 +42,31 @@ function bin_up_node($config, $new, $current, $upline, $level = 0, $next = 0)
 	$newtask = true;
 	if (!bin_isDownline($new['id'], $upline['id']))
 	{
-		// create downline.txt
-		file_write(bin_path($upline['id'], 'downline'), $new['username'].':'.$new['id']."\n", 'a+');
+		$data = array(
+			'bin_id'      => $upline['id'],
+			'user_bin_id' => $new['id']
+			);
+		// create downline
+		$db->Insert('bin_list_down_line', $data);
 
-		// create downline_(left/right).txt
+		// create downline_(left/right)
 		$position = $current['position'] ? 'right' : 'left';
 		$sqltotal = 'total_'.$position;
 		$sqldepth = 'depth_'.$position;
 		$sqladd   = '';
-		file_write(bin_path($upline['id'], 'downline_'.$position), $new['username'].':'.$new['id']."\n", 'a+');
+		$db->Insert('bin_list_down_'.$position, $data);
 
 		// on the first call
 		if ($next==0)
 		{
-			// create upline.txt
-			@copy(bin_path($upline['id'], 'upline'), bin_path($new['id'], 'upline'));
-			file_write(bin_path($new['id'], 'upline'), $upline['username'].':'.$upline['id']."\n", 'a+');
+			// create upline
+			$db->Execute("INSERT INTO `bin_list_up_line` (`bin_id`, `user_bin_id`)
+			             SELECT '{$new['id']}', `user_bin_id`
+			             FROM `bin_list_up_line` WHERE `bin_id`={$upline['id']} ");
+			$db->Insert('bin_list_up_line', array(
+				'bin_id'      => $new['id'],
+				'user_bin_id' => $upline['id']
+				));
 
 			// Add Depth
 			$new['add_depth'] = 1; // tandai kalo proses ini menambah kedalaman
@@ -212,13 +220,21 @@ function bin_up_sponsor($config, $new, $current, $sponsor, $level = 0, $next = 0
 	{
 		// $db->Execute("START TRANSACTION");
 
-		// create downsponsor.txt
-		file_write(bin_path($sponsor['id'], 'downsponsor'), $new['username'].':'.$new['id']."\n", 'a+');
+		// create downsponsor
+		$db->Insert('bin_list_down_sponsor', array(
+			'bin_id'      => $sponsor['id'],
+			'user_bin_id' => $new['id']
+			));
 		if ($next==0)
 		{
-			// create upsponsor.txt
-			@copy(bin_path($sponsor['id'], 'upsponsor'), bin_path($new['id'], 'upsponsor'));
-			file_write(bin_path($new['id'], 'upsponsor'), $sponsor['username'].':'.$sponsor['id']."\n", 'a+');
+			// create upsponsor
+			$db->Execute("INSERT INTO `bin_list_up_sponsor` (`bin_id`, `user_bin_id`)
+			             SELECT '{$new['id']}', `user_bin_id`
+			             FROM `bin_list_up_sponsor` WHERE `bin_id`={$sponsor['id']} ");
+			$db->Insert('bin_list_up_sponsor', array(
+				'bin_id'      => $new['id'],
+				'user_bin_id' => $sponsor['id']
+				));
 
 			// Update sponsor database
 			$q = "UPDATE `bin` SET `total_sponsor`=(`total_sponsor`+1) WHERE `id`=".$sponsor['id'];
@@ -577,7 +593,7 @@ function bin_user_create_validate($data, $check_serial = true)
 						$count = $db->getOne("SELECT COUNT(*) FROM `bin_field` WHERE `field_id`={$field_id} AND `field_value`='{$params[$field]}'");
 						if ($count >= $limit)
 						{
-							user_create_validate_msg('Maaf, "'.lang($field).'" yang anda masukkan telah digunakan member sebelumnya sebanyak '.money($limit).' kali!');
+							user_create_validate_msg('Maaf, "'.lang($field).'" yang anda masukkan telah digunakan member sebelumnya sebanyak '.money($count).' kali!, sedangkan '.lang($field).' hanya boleh digunakan '.money($count).' kali saja.');
 							return false;
 						}
 					}
@@ -662,139 +678,76 @@ function bin_fetch_username($username)
 	}
 	return array();
 }
-/*
-Example
--- mengambil path utama
-bin_path();                   == _ROOT.'images/modules/bin/files/'
--- mengambil path dari username GS100001
-bin_path('GS100001');         == _ROOT.'images/modules/bin/files/username/GS/10/00/01/'
--- mengambil path dari bin_id 862394 (path nya sendiri hasil dr softlink username yg terhubung)
-bin_path(862394);             == _ROOT.'images/modules/bin/files/id/86/23/94/'
--- mengambil filepath dari bin_id 862394
-bin_path(862394, 'downline'); == _ROOT.'modules/bin/files/id/86/23/94/downline.txt'
-*/
-function bin_path($bin_id_or_usr='', $file = '')
+function bin_isCheck($dbtable, $bin_id_or_username, $current_bin_id_or_username)
 {
-	$out = _ROOT.'images/modules/bin/files/';
-	if (!empty($bin_id_or_usr))
+	global $db, $Bbc;
+	if (empty($current_bin_id_or_username))
 	{
-		$out .= is_numeric($bin_id_or_usr) ? 'id/' : 'username/';
-		$out .= $bin_id_or_usr.'/';
-		if (!empty($file))
+		if (empty($Bbc->member))
 		{
-			$files = ['downline', 'downline_left', 'downline_right', 'upline', 'upsponsor', 'downsponsor'];
-			if (in_array($file, $files))
-			{
-				$out .= $file.'.txt';
-			}
+			return false;
+		}
+		$current_bin_id_or_username = $Bbc->member['id'];
+	}else
+	if (!is_numeric($current_bin_id_or_username))
+	{
+		$current_bin_id_or_username = $db->getOne("SELECT `id` FROM `bin` WHERE `username`='{$current_bin_id_or_username}'");
+		if (empty($current_bin_id_or_username))
+		{
+			return false;
 		}
 	}
+	if (!is_numeric($bin_id_or_username))
+	{
+		$bin_id_or_username = $db->getOne("SELECT `id` FROM `bin` WHERE `username`='{$bin_id_or_username}'");
+		if (empty($bin_id_or_username))
+		{
+			return false;
+		}
+	}
+	if (isset($Bbc->$dbtable[$current_bin_id_or_username][$bin_id_or_username]))
+	{
+		return $Bbc->$dbtable[$current_bin_id_or_username][$bin_id_or_username];
+	}
+	$sql = "SELECT `list_id` FROM `{$dbtable}` WHERE `bin_id`={$current_bin_id_or_username} AND `user_bin_id`={$bin_id_or_username}";
+	$out = $Bbc->$dbtable[$current_bin_id_or_username][$bin_id_or_username] = $db->getOne($sql) ? true : false;
 	return $out;
 }
 /*
-DIPANGGIL PERTAMA KALI KETIKA MEMBER DIBUAT SEBELUM MENG-EKSEKUSI FUNCTION SCRAWLING (bin_up_node(), bin_up_pair(), bin_up_sponsor())
-*/
-function bin_path_create($bin_id, $username)
-{
-	_func('path');
-	$path_bin = bin_path();
-	file_write($path_bin.'username/'.$username.'/index.html');
-	path_create($path_bin.'id/');
-	if (!file_exists($path_bin.'id/'.$bin_id))
-	{
-		$path_cur = getcwd().'/';
-		chdir($path_bin.'id/');
-		symlink('../username/'.$username, $bin_id);
-		chdir($path_cur);
-	}
-}
-/*
 BERFUNGSI UNTUK MENCHECK APAKAH ID ATAU USERNAME YANG DIMASUKKAN ADALAH DI DALAM JARINGAN DOWNLINE NYA
+arg1 = downline
+arg2 = upline
 */
 function bin_isDownline($bin_id_or_username, $current_bin_id_or_username='')
 {
-	if (empty($current_bin_id_or_username))
-	{
-		global $Bbc;
-		if (empty($Bbc->member))
-		{
-			return false;
-		}
-		$current_bin_id_or_username = $Bbc->member['id'];
-	}
-	if (is_numeric($bin_id_or_username))
-	{
-		$check = '~\:'.$bin_id_or_username.'\n~is';
-	}else{
-		$check = '~\n?'.$bin_id_or_username.'\:~is';
-	}
-	return preg_match($check, file_read(bin_path($current_bin_id_or_username, 'downline')));
+	return bin_isCheck('bin_list_down_line', $bin_id_or_username, $current_bin_id_or_username);
 }
 /*
 BERFUNGSI UNTUK MENCHECK APAKAH ID ATAU USERNAME YANG DIMASUKKAN ADALAH DI DALAM JARINGAN UPLINE NYA
+arg1 = upline
+arg2 = downline
 */
 function bin_isUpline($bin_id_or_username, $current_bin_id_or_username='')
 {
-	if (empty($current_bin_id_or_username))
-	{
-		global $Bbc;
-		if (empty($Bbc->member))
-		{
-			return false;
-		}
-		$current_bin_id_or_username = $Bbc->member['id'];
-	}
-	if (is_numeric($bin_id_or_username))
-	{
-		$check = '~\:'.$bin_id_or_username.'\n~is';
-	}else{
-		$check = '~\n?'.$bin_id_or_username.'\:~is';
-	}
-	return preg_match($check, file_read(bin_path($current_bin_id_or_username, 'upline')));
+	return bin_isCheck('bin_list_up_line', $bin_id_or_username, $current_bin_id_or_username);
 }
 /*
 BERFUNGSI UNTUK MENCHECK APAKAH ID ATAU USERNAME YANG DIMASUKKAN ADALAH DI DALAM JARINGAN SPONSOR KE ATAS NYA
+arg1 = downsponsor
+arg2 = upsponsor
 */
 function bin_isDownsponsor($bin_id_or_username, $current_bin_id_or_username='')
 {
-	if (empty($current_bin_id_or_username))
-	{
-		global $Bbc;
-		if (empty($Bbc->member))
-		{
-			return false;
-		}
-		$current_bin_id_or_username = $Bbc->member['id'];
-	}
-	if (is_numeric($bin_id_or_username))
-	{
-		$check = '~\:'.$bin_id_or_username.'\n~is';
-	}else{
-		$check = '~\n?'.$bin_id_or_username.'\:~is';
-	}
-	return preg_match($check, file_read(bin_path($current_bin_id_or_username, 'downsponsor')));
+	return bin_isCheck('bin_list_down_sponsor', $bin_id_or_username, $current_bin_id_or_username);
 }
 /*
 BERFUNGSI UNTUK MENCHECK APAKAH ID ATAU USERNAME YANG DIMASUKKAN ADALAH DI DALAM JARINGAN SPONSOR KE BAWAH NYA
+arg1 = upsponsor
+arg2 = downsponsor
 */
 function bin_isUpsponsor($bin_id_or_username, $current_bin_id_or_username='')
 {
-	if (empty($current_bin_id_or_username))
-	{
-		global $Bbc;
-		if (empty($Bbc->member))
-		{
-			return false;
-		}
-		$current_bin_id_or_username = $Bbc->member['id'];
-	}
-	if (is_numeric($bin_id_or_username))
-	{
-		$check = '~\:'.$bin_id_or_username.'\n~is';
-	}else{
-		$check = '~\n?'.$bin_id_or_username.'\:~is';
-	}
-	return preg_match($check, file_read(bin_path($current_bin_id_or_username, 'upsponsor')));
+	return bin_isCheck('bin_list_up_sponsor', $bin_id_or_username, $current_bin_id_or_username);
 }
 
 /*

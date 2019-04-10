@@ -7,7 +7,7 @@ if (!empty($user->id))
 }
 if (empty($Bbc->member))
 {
-	if (!in_array($Bbc->mod['task'], ['fetch', 'fix', 'testimonial', 'testimonial_detail']))
+	if (!in_array($Bbc->mod['task'], ['binfix', 'fetch', 'fix', 'testimonial', 'testimonial_detail']))
 	{
 		$Bbc->mod['task'] = 'register';
 	}
