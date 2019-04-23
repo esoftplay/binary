@@ -78,7 +78,6 @@ if (!empty($id))
 		'id'     => 'id',
 		'expire' => strtotime('+2 HOURS'),
 		);
-
 	foreach ($fields as $i => $field)
 	{
 		if (in_array($field['title'], $hidden))
@@ -131,12 +130,12 @@ if (!empty($id))
 		),
 		'name' => array(
 			'text'      => 'Name',
-			'type'      => 'text',
+			'type'      => in_array('name', $editable) ? 'text' : 'plain',
 			'mandatory' => '1'
 			),
 		'email' => array(
 			'text'      => 'Email',
-			'type'      => 'text',
+			'type'      => in_array('email', $editable) ? 'text' : 'plain',
 			'mandatory' => 1,
 			'checked'   => 'email'
 			)
