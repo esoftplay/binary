@@ -36,6 +36,43 @@ if (!empty($user->id) && _ADMIN=='')
 	}
 	$btn_link = '<a class="btn btn-xs btn-default pull-right hidden" id="btn-duplicate">'.icon('duplicate').' '.lang('Clone Profile').'</a>';
 }
+$tos_check = '';
+if (empty($user->id) && _ADMIN=='' && empty($_GET['is_ajax']))
+{
+	$tos = _func('content', 'fetch', config('bin_fields', 'tos'));
+	if (!empty($tos))
+	{
+		ob_start();
+		?>
+		<div class="col-sm-12 col-md-12">
+			<div class="form-group text-center">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="checkbox_agree" value="1" req="any true">
+						Saya telah mengisi form secara benar, menyetujui dan Mematuhi segala
+					</label>
+					<a data-toggle="modal" href='#tos-modal'>peraturan perusahaan</a>
+				</div>
+			</div>
+			<div class="modal fade" id="tos-modal" tabindex="-1" role="dialog">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title"><?php echo $tos['title']; ?></h4>
+						</div>
+						<div class="modal-body">
+							<?php echo $tos['content']; ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php
+		$tos_check = ob_get_contents();
+		ob_end_clean();
+	}
+}
 ?>
 <form method="POST" action="" id="member_reg" name="member_reg" class="formIsRequire" enctype="multipart/form-data" role="form">
 	<div class="panel panel-default">
@@ -43,7 +80,7 @@ if (!empty($user->id) && _ADMIN=='')
 			<h3 class="panel-title"><?php echo lang('Registrasi Member').$btn_link; ?></h3>
 		</div>
 		<div class="panel-body">
-  		<div class="col-sm-6">
+			<div class="col-sm-6">
 				<div class="form-group">
 					<label><?php echo lang('Serial')?></label>
 					<input value="<?php echo @$_POST['params']['serial']; ?>" name="params[serial]" class="form-control" title="<?php echo lang('Serial'); ?>" placeholder="<?php echo lang('Serial'); ?>" req="any true" type="text" />
@@ -55,7 +92,7 @@ if (!empty($user->id) && _ADMIN=='')
 						<input value="<?php echo @$_POST['params']['sponsor']; ?>" name="params[sponsor]" class="form-control" title="<?php echo lang('Member Sponsor'); ?>" placeholder="<?php echo lang('Member Sponsor'); ?>" req="any true" type="text" />
 						<p class="help-block"> <?php echo lang($custom_fields['sponsor']['tips']) ?></p>
 					</div>
-	  			<div class="form-group">
+					<div class="form-group">
 						<label><?php echo lang('Nama Member')?></label>
 						<input value="<?php echo @$_POST['name']; ?>" name="name" class="form-control" title="<?php echo lang('Nama Member')?>" placeholder="<?php echo lang('Nama Member')?>" req="any true" type="text" />
 					</div>
@@ -86,8 +123,8 @@ if (!empty($user->id) && _ADMIN=='')
 						<p class="help-block"> <?php echo lang($custom_fields['location_latlong']['tips']) ?></p>
 					</div>
 				</div>
-  		</div>
-  		<div class="col-sm-6">
+			</div>
+			<div class="col-sm-6">
 				<div class="form-group">
 					<label><?php echo lang('PIN Serial')?></label>
 					<input value="<?php echo @$_POST['params']['pin']; ?>" name="params[pin]" class="form-control" title="<?php echo lang('PIN Serial')?>" placeholder="<?php echo lang('PIN Serial')?>" req="any true" type="text">
@@ -120,7 +157,8 @@ if (!empty($user->id) && _ADMIN=='')
 					echo $f->show_param($f->config, @$_POST['params'], $params['name']);
 					?>
 				</div>
-  		</div>
+			</div>
+			<?php echo $tos_check; ?>
 		</div>
 		<div class="clearfix"></div>
 		<div class="panel-footer">

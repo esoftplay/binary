@@ -101,6 +101,11 @@ link_js(_LIB.'pea/includes/formIsRequire.js');
 					</tbody>
 				</table>
 			</div>
+			<div class="form-group">
+				<label>Kode etik / peraturan perusahaan</label>
+				<input value="<?php echo @$fields['tos']; ?>" name="tos" class="form-control" title="Content ID term of service" placeholder="Insert content ID for terms of services" req="number false" type="text" />
+				<div class="help-block">Masukkan content ID yang ingin anda jadikan term of services di field atas! anda bisa <a href="index.php?mod=content.content_add" rel="admin_link">membuat content baru</a> lalu memilih ID <a href="index.php?mod=content.content" rel="admin_link">dari sini</a></div>
+			</div>
 		</div>
 		<div class="panel-footer">
 			<button type="submit" class="add_type btn btn-primary"><?php echo icon('floppy-disk').' SIMPAN'; ?></button>
