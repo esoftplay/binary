@@ -1,0 +1,125 @@
+.margin_tb10 {
+  margin: 10px 0 !important;
+}
+
+.navbar .login {
+  margin-right: 0px;
+}
+.navbar .navbar-nav li {
+  top: 0;
+}
+.navbar .navbar-nav li a {
+  padding: 5px 15px;
+}
+
+/* SLIDER */
+[id^=imageslider] {
+  margin-top: 75px;
+}
+[id^=imageslider] .carousel-inner img, 
+.statistikIndex .carousel-inner img,
+#myCarouselContent .carousel-inner img {
+  width: 100%;
+  margin-bottom: 0px !important;
+}
+#myCarouselContent .carousel-control,
+#myCarouselTestimonials .carousel-control,
+#myCarousel .carousel-control {
+  width: 50px;
+  background: transparent;
+}
+
+/* WHY US */
+.whyusContent img {
+  margin-bottom: 0px !important; 
+}
+.img_100 {
+  height: 100px;
+  width: auto !important;
+  object-fit: cover;
+}
+
+/* Testimonial */
+.testiIndex .carousel-indicators img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+}
+img.img-circle {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;  
+}
+
+/* Statistik */
+.testiHead:hover,
+.testiHead:active {
+  background-image: linear-gradient(#fcfcfc,#d6d4d4) !important;
+}
+.statistikIndex .testiHead {
+  cursor: auto;
+}
+.statistikIndex .testiHead:hover span {
+  color: #1b01a5 !important;
+}
+.statistikIndex h2 {
+  text-shadow: none;
+}
+
+
+/* Gallery */
+.galleryIndex img {
+  width: 100%;
+}
+.value-img a {
+  text-decoration: none;
+}
+
+/* Footer */
+.footer a.glyph {
+  font-size: 30px;
+}
+
+/* Fix Image */
+.navbar {
+  background-image: url(../html/img/image_header.png);
+}
+.footer {
+  background-image: url(../html/img/image_footer.png);
+}
+.content {
+  background-image: url(../html/img/ornament_konten.png);
+}
+.contentReg {
+  background-image: url(../html/img/ornament_konten.png);
+}
+.pageLogin {
+  background-image: url(../html/img/image3.png);
+}
+.testiIndex {
+  background-image: url(../html/img/image_back_testimonial.png);
+}
+.statistikIndex {
+  background-image: url(../html/img/index/background_statistik.png);
+}
+.cd-top {
+  background: rgba(16, 185, 242) url(../html/img/cd-top-arrow.svg) no-repeat center 50%;
+}
+
+
+
+/*LARGE*/
+@media (min-width: 1280px ) {}
+/*MEDIUM*/
+@media (min-width: 992px) and (max-width: 1280px) {
+
+}
+/* SMALL */
+@media (min-width: 768px) and (max-width: 992px) {
+}
+/* EXTRA SMALL */
+@media (max-width: 768px) {
+  .mobile_left {
+    float: left !important;
+  }
+}

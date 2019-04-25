@@ -1,0 +1,593 @@
+{
+    "theme": [
+        {
+            "id": "92",
+            "template_id": "8",
+            "name": "none",
+            "content": "[title][content]",
+            "active": "1"
+        },
+        {
+            "id": "93",
+            "template_id": "8",
+            "name": "menu",
+            "content": "<div class=”col-xs-12 col-sm-7 pull-right”>\r\n\t[title][content]\r\n<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "94",
+            "template_id": "8",
+            "name": "content_float",
+            "content": "<section class=”whyusIndex”>\r\n\t<div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12 text-center”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n    [content]\r\n  <\/div>\r\n<\/section>",
+            "active": "1"
+        },
+        {
+            "id": "95",
+            "template_id": "8",
+            "name": "testimonial",
+            "content": "<div class=”testiIndex”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-lg-12 text-center”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n    [content]\r\n  <\/div>\r\n<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "96",
+            "template_id": "8",
+            "name": "statistic_title",
+            "content": "<div class=”row”>\r\n  <div class=”col-lg-12 text-center”>\r\n    <h2>[title]<\/h2>\r\n  <\/div>\r\n<\/div>\r\n[content]",
+            "active": "1"
+        },
+        {
+            "id": "97",
+            "template_id": "8",
+            "name": "statistic_left",
+            "content": "<div class=”col-md-4 statMenu”>\r\n  [<div class=”text-center py-3 testiHead newMember”>\r\n    <img src=”templates\/haji_blue\/html\/img\/index\/icon_statistik1.png” class=”mr-2” style=”max-width: 15%;”>\r\n    <span>title<\/span>\r\n  <\/div>]\r\n\t[content]\r\n<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "98",
+            "template_id": "8",
+            "name": "statistic",
+            "content": "<div class=”col-md-4 statMenu”>\r\n  [<div class=”text-center py-3 testiHead topIncome”>\r\n    <img src=”templates\/haji_blue\/html\/img\/index\/icon_statistik1.png” class=”mr-2” style=”max-width: 15%;”>\r\n    <span>title<\/span>\r\n  <\/div>]\r\n\t[content]\r\n<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "99",
+            "template_id": "8",
+            "name": "statistic_right",
+            "content": "<div class=”col-md-4 statMenu”>\r\n  [<div class=”text-center py-3 testiHead topSponsor”>\r\n    <img src=”templates\/haji_blue\/html\/img\/index\/icon_statistik1.png” class=”mr-2” style=”max-width: 15%;”>\r\n    <span>title<\/span>\r\n  <\/div>]\r\n\t[content]\r\n<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "100",
+            "template_id": "8",
+            "name": "content_news",
+            "content": "<section class=”newsIndex”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12 text-center”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n\t\t[content]\r\n  <\/div>\r\n<\/section>",
+            "active": "1"
+        },
+        {
+            "id": "101",
+            "template_id": "8",
+            "name": "footer_address",
+            "content": "<div class=”col-lg-4 address”>[title][content]<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "102",
+            "template_id": "8",
+            "name": "footer_logo",
+            "content": "<div class=”col-lg-1”>[title][content]<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "103",
+            "template_id": "8",
+            "name": "footer_sosmed",
+            "content": "<div class=”col-lg-7 text-right”>[title][content]<\/div>",
+            "active": "1"
+        }
+    ],
+    "block_ref": {
+        "1": "agenda",
+        "2": "contact",
+        "3": "content",
+        "4": "custom",
+        "5": "language",
+        "6": "layout",
+        "7": "links",
+        "8": "login",
+        "9": "logo",
+        "10": "menu",
+        "11": "survey",
+        "12": "statistic",
+        "13": "imageslider",
+        "14": "content_list",
+        "15": "content_tag",
+        "16": "bin_testimonial",
+        "17": "sosmed",
+        "18": "bin_statistic"
+    },
+    "position": {
+        "1": "left",
+        "2": "right",
+        "3": "top",
+        "4": "bottom",
+        "5": "header",
+        "6": "footer",
+        "7": "logo",
+        "8": "content_top",
+        "9": "content_bottom",
+        "10": "intro",
+        "11": "debug",
+        "12": "content",
+        "13": "bottom_2"
+    },
+    "block": [
+        {
+            "id": "158",
+            "template_id": "8",
+            "block_ref_id": "9",
+            "position_id": "7",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "92",
+            "group_ids": ",all,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "image": "images\/uploads\/logo_3.png",
+                "size": "60",
+                "is_link": "1",
+                "link": "",
+                "title": "",
+                "attribute": "class=”navbar-brand”"
+            },
+            "orderby": "1",
+            "active": "1"
+        },
+        {
+            "id": "159",
+            "template_id": "8",
+            "block_ref_id": "8",
+            "position_id": "5",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "93",
+            "group_ids": ",unassigned,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "forget": "0",
+                "register": "0"
+            },
+            "orderby": "1",
+            "active": "1"
+        },
+        {
+            "id": "160",
+            "template_id": "8",
+            "block_ref_id": "10",
+            "position_id": "5",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "93",
+            "group_ids": ",all,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "menu-horizontal",
+                "cat_id": "1",
+                "submenu": "bottom right"
+            },
+            "orderby": "2",
+            "active": "1"
+        },
+        {
+            "id": "161",
+            "template_id": "8",
+            "block_ref_id": "13",
+            "position_id": "3",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "92",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "cat_id": "1",
+                "indicator": "1",
+                "control": "1"
+            },
+            "orderby": "1",
+            "active": "1"
+        },
+        {
+            "id": "162",
+            "template_id": "8",
+            "block_ref_id": "3",
+            "position_id": "9",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "94",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "float",
+                "kind_id": "-1",
+                "type_id": "1",
+                "cat_id": "1",
+                "ids": "",
+                "popular": "",
+                "limit_title": "75",
+                "limit_title_by": "char",
+                "title": "1",
+                "title_link": "1",
+                "intro": "intro",
+                "created": "0",
+                "modified": "0",
+                "author": "0",
+                "tag": "0",
+                "tag_link": "0",
+                "rating": "0",
+                "read_more": "1",
+                "tot_list": "3",
+                "thumbnail": "1"
+            },
+            "orderby": "1",
+            "active": "1"
+        },
+        {
+            "id": "163",
+            "template_id": "8",
+            "block_ref_id": "16",
+            "position_id": "9",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "95",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "tag_type": "1",
+                "limit": "3"
+            },
+            "orderby": "2",
+            "active": "1"
+        },
+        {
+            "id": "164",
+            "template_id": "8",
+            "block_ref_id": "4",
+            "position_id": "4",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "96",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "content": "",
+                "type": "none"
+            },
+            "orderby": "1",
+            "active": "1"
+        },
+        {
+            "id": "165",
+            "template_id": "8",
+            "block_ref_id": "18",
+            "position_id": "4",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "97",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "cat": [
+                    "1"
+                ],
+                "limit": "10"
+            },
+            "orderby": "2",
+            "active": "1"
+        },
+        {
+            "id": "166",
+            "template_id": "8",
+            "block_ref_id": "18",
+            "position_id": "4",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "98",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "cat": [
+                    "2"
+                ],
+                "limit": "10"
+            },
+            "orderby": "3",
+            "active": "1"
+        },
+        {
+            "id": "167",
+            "template_id": "8",
+            "block_ref_id": "18",
+            "position_id": "4",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "99",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "cat": [
+                    "3"
+                ],
+                "limit": "10"
+            },
+            "orderby": "4",
+            "active": "1"
+        },
+        {
+            "id": "168",
+            "template_id": "8",
+            "block_ref_id": "6",
+            "position_id": "13",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "92",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "join-us",
+                "caption": "#Bergabunglah dan Sukses Bersama Kami"
+            },
+            "orderby": "1",
+            "active": "1"
+        },
+        {
+            "id": "169",
+            "template_id": "8",
+            "block_ref_id": "3",
+            "position_id": "13",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "100",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "grid",
+                "kind_id": "-1",
+                "type_id": "1",
+                "cat_id": "1",
+                "ids": "",
+                "popular": "",
+                "limit_title": "75",
+                "limit_title_by": "char",
+                "title": "1",
+                "title_link": "1",
+                "intro": "intro",
+                "created": "1",
+                "modified": "0",
+                "author": "1",
+                "tag": "0",
+                "tag_link": "0",
+                "rating": "0",
+                "read_more": "1",
+                "tot_list": "4",
+                "thumbnail": "1"
+            },
+            "orderby": "2",
+            "active": "1"
+        },
+        {
+            "id": "170",
+            "template_id": "8",
+            "block_ref_id": "3",
+            "position_id": "13",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "92",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "thumbnail-only",
+                "kind_id": "1",
+                "type_id": "1",
+                "cat_id": "2",
+                "ids": "",
+                "popular": "",
+                "limit_title": "75",
+                "limit_title_by": "char",
+                "title": "0",
+                "title_link": "0",
+                "intro": "blank",
+                "created": "0",
+                "modified": "0",
+                "author": "0",
+                "tag": "0",
+                "tag_link": "0",
+                "rating": "0",
+                "read_more": "0",
+                "tot_list": "8",
+                "thumbnail": "1"
+            },
+            "orderby": "3",
+            "active": "1"
+        },
+        {
+            "id": "171",
+            "template_id": "8",
+            "block_ref_id": "9",
+            "position_id": "6",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "102",
+            "group_ids": ",all,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "image": "images\/uploads\/logo_3.png",
+                "size": "",
+                "is_link": "1",
+                "link": "",
+                "title": "",
+                "attribute": "class=”s_icon”"
+            },
+            "orderby": "1",
+            "active": "1"
+        },
+        {
+            "id": "172",
+            "template_id": "8",
+            "block_ref_id": "4",
+            "position_id": "6",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "101",
+            "group_ids": ",all,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "content": "Jl.Ahmad Wahid,Kalangan,Baturetno,<br>Banguntapan,Bantul,Yogyakarta,55197<br>Office : 0274-452 155<br>Phone : 081 226 272 827<br>Email : cro2@esoftdream.net",
+                "type": "none"
+            },
+            "orderby": "2",
+            "active": "1"
+        },
+        {
+            "id": "173",
+            "template_id": "8",
+            "block_ref_id": "17",
+            "position_id": "6",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "103",
+            "group_ids": ",all,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "footer",
+                "title": "Instagram, Twitter, Facebook, Youtube, Linkedin",
+                "link": "https:\/\/www.instagram.com\/, https:\/\/www.twitter.com\/, https:\/\/www.facebook.com\/, https:\/\/www.youtube.com\/, https:\/\/www.linkedin.com\/",
+                "icon": "fa fa-instagram, fa fa-twitter, fa fa-facebook-f, fa fa-youtube, fa fa-linkedin-square"
+            },
+            "orderby": "3",
+            "active": "1"
+        }
+    ],
+    "text": {
+        "158": {
+            "id": "Logo"
+        },
+        "159": {
+            "id": "Login"
+        },
+        "160": {
+            "id": "Menu Utama"
+        },
+        "161": {
+            "id": "Imageslider"
+        },
+        "162": {
+            "id": "Why Us"
+        },
+        "163": {
+            "id": "Testimonial"
+        },
+        "164": {
+            "id": "Statistik Member"
+        },
+        "165": {
+            "id": "Top Member"
+        },
+        "166": {
+            "id": "Top Income"
+        },
+        "167": {
+            "id": "Top Sponsor"
+        },
+        "168": {
+            "id": "Join Us"
+        },
+        "169": {
+            "id": "News"
+        },
+        "170": {
+            "id": "Gallery"
+        },
+        "171": {
+            "id": "Logo Footer"
+        },
+        "172": {
+            "id": "Address Footer"
+        },
+        "173": {
+            "id": "Footer Sosmed"
+        }
+    }
+}
