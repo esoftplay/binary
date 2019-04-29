@@ -1,0 +1,115 @@
+.margin_tb10{
+  margin: 10px 0 !important;
+}
+
+/* Login */
+.login_button {
+  float: right;
+  margin-right: -15px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  margin-top: 3px;
+}
+.login_button .btn-login {
+  background-image: linear-gradient(#ffffff, #e5e5e5);
+  margin-right: 10px;
+}
+.login_button .btn-reg {
+  background-image: linear-gradient(#ffd000, #f7e036);
+}
+.login_button .w3-btn {
+  margin-top: 4px;
+}
+.login_button a {
+  text-decoration: none;
+}
+
+/* SLIDER */
+[id^=imageslider] {
+  margin-top: 60px;
+}
+[id^=imageslider] .carousel-inner img, 
+#myCarouselContent .carousel-inner img {
+  width: 100%;
+}
+#myCarouselContent .carousel-control,
+#myCarousel .carousel-control {
+  width: 50px;
+  background: transparent;
+}
+
+/* Testimonial */
+.testiIndex h2,
+.statistikIndex h2 {
+  text-shadow: none;
+}
+.testiIndex .carousel-indicators img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+}
+img.img-circle {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;  
+}
+
+/* Statistik */
+.testiHead:hover,
+.testiHead:active {
+  background-image: linear-gradient(#fcfcfc,#d6d4d4) !important;
+}
+.statistikIndex .testiHead {
+  cursor: auto;
+}
+.statistikIndex .testiHead:hover span {
+  color: #1b01a5 !important;
+}
+
+/* Gallery */
+.galleryIndex img {
+  width: 100%;
+}
+.value-img a {
+  text-decoration: none;
+}
+
+/* Footer */
+.footer a.glyph {
+  font-size: 30px;
+}
+
+/* Fix Image */
+.content {
+  background-image: url(../html/img/aboutus/image_about1.png), url(../html/img/aboutus/image_about2.png);
+}
+.testiIndex {
+  background-image: url(../html/img/index/testi.png);
+}
+.statistikIndex,
+.join_us {
+  background-image: url(../html/img/index/background_statistik.png);
+}
+.pageLogin {
+  background-image: url(../html/img/image2.png);
+}
+.cd-top {
+  background: rgba(115, 73, 252) url(../html/img/cd-top-arrow.svg) no-repeat center 50%;
+}
+
+
+/*LARGE*/
+@media (min-width: 1280px ) {}
+/*MEDIUM*/
+@media (min-width: 992px) and (max-width: 1280px) {
+
+}
+/* SMALL */
+@media (min-width: 768px) and (max-width: 992px) {
+}
+/* EXTRA SMALL */
+@media (max-width: 768px) {
+  .mobile_left {
+    float: left !important;
+  }
+}

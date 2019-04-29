@@ -1,0 +1,108 @@
+.margin_tb10 {
+  margin: 10px 0 !important;
+}
+
+.navbar .login {
+  margin-right: 0px;
+}
+.navbar .navbar-nav li {
+  top: 0;
+}
+.navbar .navbar-nav li a {
+  padding: 5px 15px;
+}
+
+/* SLIDER */
+[id^=imageslider] {
+  margin-top: 75px;
+}
+[id^=imageslider] .carousel-inner img, 
+#myCarouselContent .carousel-inner img {
+  width: 100%;
+}
+#myCarouselContent .carousel-control,
+#myCarouselTestimonials .carousel-control,
+#myCarousel .carousel-control {
+  width: 50px;
+  background: transparent;
+}
+
+/* 3 Content */
+.img_100 {
+  height: 100px;
+  width: auto !important;
+  object-fit: cover;
+}
+
+/* About */
+.testiIndex h2,
+.aboutIndex h2 {
+  text-shadow: none;
+}
+
+/* Testimonial */
+.testiIndex .carousel-indicators img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+}
+img.img-circle {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;  
+}
+
+/* News */
+.img_200 {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Gallery */
+.galleryIndex img {
+  width: 100%;
+}
+.value-img a {
+  text-decoration: none;
+}
+
+/* Footer */
+.footer a.glyph {
+  font-size: 30px;
+}
+
+/* Fix Image */
+.content {
+  background-image: url(../html/img/icon_konten_kanan.png), url(../html/img/icon_konten_kiri.png);
+}
+.join_us {
+  background-image: url(../html/img/background_join_us.png);
+}
+.pageLogin {
+  background-image: url(../html/img/image2.png);
+}
+.testiIndex {
+  background-image: url(../html/img/testi.png);
+}
+.cd-top {
+  background: rgba(188, 135, 22) url(../html/img/cd-top-arrow.svg) no-repeat center 50%;
+}
+
+
+
+
+/*LARGE*/
+@media (min-width: 1280px ) {}
+/*MEDIUM*/
+@media (min-width: 992px) and (max-width: 1280px) {
+
+}
+/* SMALL */
+@media (min-width: 768px) and (max-width: 992px) {
+}
+/* EXTRA SMALL */
+@media (max-width: 768px) {
+  .mobile_left {
+    float: left !important;
+  }
+}
