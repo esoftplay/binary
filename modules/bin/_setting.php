@@ -16,7 +16,7 @@ if (empty($Bbc->member))
 	if (in_array($plan_a['group_id'], $user->group_ids))
 	{
 		$template = $sys->layout_fetch();
-		if ($template!='default/' && file_exists(_ROOT.'templates/'.$template.'member/'))
+		if ($template!='default/' && !file_exists(_ROOT.'templates/'.$template.'member/'))
 		{
 			$_CONFIG['template'] = 'default';
 		}
