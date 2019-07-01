@@ -705,12 +705,21 @@ function bin_isCheck($dbtable, $bin_id_or_username, $current_bin_id_or_username)
 			return false;
 		}
 	}
-	if (isset($Bbc->$dbtable[$current_bin_id_or_username][$bin_id_or_username]))
+	if (!isset($Bbc->{$dbtable}))
 	{
-		return $Bbc->$dbtable[$current_bin_id_or_username][$bin_id_or_username];
+		$Bbc->{$dbtable} = array();
 	}
+	if (!isset($Bbc->{$dbtable}[$current_bin_id_or_username]))
+	{
+		$Bbc->{$dbtable}[$current_bin_id_or_username] = array();
+	}
+	if (@isset($Bbc->{$dbtable}[$current_bin_id_or_username][$bin_id_or_username]))
+	{
+		return $Bbc->{$dbtable}[$current_bin_id_or_username][$bin_id_or_username];
+	}
+
 	$sql = "SELECT `list_id` FROM `{$dbtable}` WHERE `bin_id`={$current_bin_id_or_username} AND `user_bin_id`={$bin_id_or_username}";
-	$out = $Bbc->$dbtable[$current_bin_id_or_username][$bin_id_or_username] = $db->getOne($sql) ? true : false;
+	$out = $Bbc->{$dbtable}[$current_bin_id_or_username][$bin_id_or_username] = $db->getOne($sql) ? true : false;
 	return $out;
 }
 /*
