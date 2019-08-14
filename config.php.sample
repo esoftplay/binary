@@ -14,7 +14,7 @@ define('_URI', '/binary/');
 define('_URL', 'http://'.@$_SERVER['HTTP_HOST']._URI);
 define('_ROOT', dirname(__FILE__).'/');
 define('_MST', '/var/www/html/master/|/var/www/html/binary/');
-define('_SALT', '9efddd1d91e3b0eed82e88311478b98f');
+define('_SALT', 'USE_YOUR_OWN_SALT');
 define('_SEO', 1);
 
 define('_GMAP_KEY', 'AIzaSyBqaG8H1quhh0YhG8GUwG_-DNPupbOPBHs'); // https://developers.google.com/maps/documentation/javascript/get-api-key
