@@ -94,15 +94,13 @@ if (!empty($_GET['is_ajax']))
 				{
 					$incomes[$i] = 0;
 				}
-				if (!empty($type['active']))
+				if (!empty($type['active']) && !empty($type['finance']))
 				{
-					if ($type['credit']==0)
-					{
-						$incomes[$i] += $amount;
-					}else
-					if ($type['finance']==0)
+					if (@$type['finance_credit'])
 					{
 						$incomes[$i] -= $amount;
+					}else{
+						$incomes[$i] += $amount;
 					}
 				}
 				if (!$show && $amount > 0)

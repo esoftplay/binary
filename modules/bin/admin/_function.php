@@ -298,20 +298,20 @@ function bin_marketplan_reset($input)
 			$q .= implode(', ', $arr).';';
 			bin_marketplan_execute($q);
 		}else{
-			bin_marketplan_execute("INSERT INTO `bin_balance_type` (`id`, `credit`, `finance`, `balance`, `name`, `description`, `message`, `active`) VALUES
-			(1,0,1,1,'aktifasi member','aktifasi [username]','aktifasi [username]',1),
-			(2,1,1,1,'pembayaran','pembayaran dari admin [bank_info]','pembayaran dari admin [bank_info]',1),
-			(3,1,0,1,'bonus titik','bonus titik dari ID [username] di [position]','bonus titik dari ID [username] di [position]',0),
-			(4,1,0,1,'bonus sponsor','bonus sponsor dari ID [username]','bonus sponsor dari ID [username]',1),
-			(5,1,0,1,'bonus pasangan','bonus pasangan dari ID [match1] dan [match2] ','bonus pasangan dari ID [match1] dan [match2] ',1),
-			(6,1,0,1,'bonus level titik','bonus level titik dari ID [username] di level [level]','bonus level titik dari ID [username] di level [level]',0),
-			(7,1,0,1,'bonus generasi titik','bonus generasi titik dari ID [username] di level [level]','bonus generasi titik dari ID [username] di level [level]',0),
-			(8,1,0,1,'bonus generasi sponsor','bonus generasi sponsor dari ID [username] di level [level]','bonus generasi sponsor dari ID [username] di level [level]',0),
-			(9,1,0,1,'bonus generasi pasangan','Bonus generasi pasangan dari ID [username] di level [level]','Bonus generasi pasangan dari ID [username] di level [level]',0),
-			(10,1,1,0,'biaya operasional','pengeluaran biaya untuk keperluan [operasional]','pengeluaran biaya untuk keperluan [operasional]',1),
-			(11,1,0,0,'kualifikasi reward','ID [username] kualifikasi atas [reward]','ID [username] kualifikasi atas [reward]',1),
-			(12,1,1,0,'penerimaan reward','ID [username] telah mendapatkan [reward]','ID [username] telah mendapatkan [reward]',1),
-			(13,0,0,1,'Klaim Perusahaan','klaim perusahaan atas bonus dan reward dari [member]','klaim perusahaan atas bonus dan reward dari [member]',1)");
+			bin_marketplan_execute("INSERT INTO `bin_balance_type` (`id`, `finance`, `finance_credit`, `balance`, `balance_credit`, `name`, `description`, `message`, `active`) VALUES
+			(1, 1, 0, 0, 0, 'aktifasi member', 'aktifasi [username]', 'aktifasi [username]', 1),
+			(2, 1, 1, 1, 1, 'pembayaran', 'pembayaran dari admin [bank_info]', 'pembayaran dari admin [bank_info]', 1),
+			(3, 0, 0, 1, 0, 'bonus titik', 'bonus titik dari ID [username] di [position]', 'bonus titik dari ID [username] di [position]', 0),
+			(4, 0, 0, 1, 0, 'bonus sponsor', 'bonus sponsor dari ID [username]', 'bonus sponsor dari ID [username]', 1),
+			(5, 0, 0, 1, 0, 'bonus pasangan', 'bonus pasangan dari ID [match1] dan [match2] ', 'bonus pasangan dari ID [match1] dan [match2] ', 1),
+			(6, 0, 0, 1, 0, 'bonus level titik', 'bonus level titik dari ID [username] di level [level]', 'bonus level titik dari ID [username] di level [level]', 0),
+			(7, 0, 0, 1, 0, 'bonus generasi titik', 'bonus generasi titik dari ID [username] di level [level]', 'bonus generasi titik dari ID [username] di level [level]', 0),
+			(8, 0, 0, 1, 0, 'bonus generasi sponsor', 'bonus generasi sponsor dari ID [username] di level [level]', 'bonus generasi sponsor dari ID [username] di level [level]', 0),
+			(9, 0, 0, 1, 0, 'bonus generasi pasangan', 'Bonus generasi pasangan dari ID [username] di level [level]', 'Bonus generasi pasangan dari ID [username] di level [level]', 0),
+			(10, 1, 1, 0, 0, 'biaya operasional', 'pengeluaran biaya untuk keperluan [operasional]', 'pengeluaran biaya untuk keperluan [operasional]', 1),
+			(11, 0, 1, 0, 0, 'kualifikasi reward', 'ID [username] kualifikasi atas [reward]', 'ID [username] kualifikasi atas [reward]', 0),
+			(12, 1, 1, 0, 0, 'penerimaan reward', 'ID [username] telah mendapatkan [reward]', 'ID [username] telah mendapatkan [reward]', 0),
+			(13, 1, 0, 1, 1, 'Klaim Perusahaan', 'klaim perusahaan atas bonus dan reward dari [member]', 'klaim perusahaan atas bonus dan reward dari [member]', 1)");
 		}
 		if (!empty($input['level']))
 		{

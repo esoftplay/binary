@@ -27,11 +27,11 @@ $omset  = array();
 $payout = array();
 foreach ($types as $type)
 {
-	if (empty($type['credit']))
+	if (!empty($type['finance_credit']))
 	{
-		$omset[] = $type['id'];
-	}else{
 		$payout[] = $type['id'];
+	}else{
+		$omset[]  = $type['id'];
 	}
 }
 

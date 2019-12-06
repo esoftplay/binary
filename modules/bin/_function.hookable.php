@@ -224,6 +224,80 @@ $params: berisi array yang akan digunakan untuk me-replace text "[...]" sesuai d
 */
 function bin_finance($bin_id, $type_id, $amount, $params=array(), $time = '')
 {
+	global $db, $sys;
+	$day     = date('j');
+	$month   = date('n');
+	$year    = date('Y');
+	$bin_id  = intval($bin_id);
+	$amount  = intval($amount);
+	$type_id = intval($type_id);
+	$time    = empty($time) ? 'NOW()' : "'{$time}'";
+	$q       = "SELECT * FROM `bin_balance_type` WHERE `id`={$type_id}";
+	$type    = $db->getRow($q);
+	if (empty($type))
+	{
+		return false;
+	}
+	// Jika 'balance_credit' belum ada maka update table database
+	if (!isset($type['balance_credit']))
+	{
+		$qq = "ALTER TABLE `bin_balance_type` CHANGE `finance` `finance` TINYINT(1)  NULL  DEFAULT '0'  COMMENT 'apakah ini melibatkan transaksi uang (dilihat dari sisi perusahaan)';
+			ALTER TABLE `bin_balance_type` CHANGE `balance` `balance` TINYINT(1)  NULL  DEFAULT '1'  COMMENT 'apakah ini akan melibatkan saldo atau balance (dilihat dari sisi user)';
+			ALTER TABLE `bin_balance_type` ADD `finance_credit` TINYINT(1)  NULL  DEFAULT '0'  COMMENT '0=pemasukan, 1=pengeluaran'  AFTER `finance`;
+			ALTER TABLE `bin_balance_type` ADD `balance_credit` TINYINT(1)  NULL  DEFAULT '0'  COMMENT '0=pemasukan, 1=pengeluaran'  AFTER `balance`;
+			ALTER TABLE `bin_balance_type` DROP `credit`;
+			UPDATE `bin_balance_type` SET `finance` = '1', `finance_credit` = '0', `balance` = '0', `balance_credit` = '0' WHERE `id` = '1';
+			UPDATE `bin_balance_type` SET `finance` = '1', `finance_credit` = '1', `balance` = '1', `balance_credit` = '1' WHERE `id` = '2';
+			UPDATE `bin_balance_type` SET `finance` = '0', `finance_credit` = '0', `balance` = '1', `balance_credit` = '0' WHERE `id` = '3';
+			UPDATE `bin_balance_type` SET `finance` = '0', `finance_credit` = '0', `balance` = '1', `balance_credit` = '0' WHERE `id` = '4';
+			UPDATE `bin_balance_type` SET `finance` = '0', `finance_credit` = '0', `balance` = '1', `balance_credit` = '0' WHERE `id` = '5';
+			UPDATE `bin_balance_type` SET `finance` = '0', `finance_credit` = '0', `balance` = '1', `balance_credit` = '0' WHERE `id` = '6';
+			UPDATE `bin_balance_type` SET `finance` = '0', `finance_credit` = '0', `balance` = '1', `balance_credit` = '0' WHERE `id` = '7';
+			UPDATE `bin_balance_type` SET `finance` = '0', `finance_credit` = '0', `balance` = '1', `balance_credit` = '0' WHERE `id` = '8';
+			UPDATE `bin_balance_type` SET `finance` = '0', `finance_credit` = '0', `balance` = '1', `balance_credit` = '0' WHERE `id` = '9';
+			UPDATE `bin_balance_type` SET `finance` = '1', `finance_credit` = '1', `balance` = '0', `balance_credit` = '0' WHERE `id` = '10';
+			UPDATE `bin_balance_type` SET `finance` = '0', `finance_credit` = '1', `balance` = '0', `balance_credit` = '0' WHERE `id` = '11';
+			UPDATE `bin_balance_type` SET `finance` = '1', `finance_credit` = '1', `balance` = '0', `balance_credit` = '0' WHERE `id` = '12';
+			UPDATE `bin_balance_type` SET `finance` = '1', `finance_credit` = '0', `balance` = '1', `balance_credit` = '1' WHERE `id` = '13';";
+		$r = array_map('trim', explode(';', $qq));
+		foreach ($r as $q0)
+		{
+			if (!empty($q0))
+			{
+				$db->Execute($q0);
+			}
+		}
+		$type = $db->getRow($q);
+	}
+	$finance_total = intval($db->getOne("SELECT `total` FROM `bin_finance` WHERE 1 ORDER BY `id` DESC LIMIT 1"));
+	$balance_total = intval($db->getOne("SELECT `balance` FROM `bin` WHERE `id`={$bin_id}"));
+	// Tambahan info $params
+	if (!empty($type['finance']))
+	{
+		if (!empty($type['finance_credit']))
+		{
+			$finance_total -= $amount;
+		}else{
+			$finance_total += $amount;
+		}
+		$params['finance_total'] = $finance_total;
+	}
+	if (!empty($type['balance']))
+	{
+		if (!empty($type['balance_credit']))
+		{
+			$balance_total -= $amount;
+		}else{
+			$balance_total += $amount;
+		}
+		$params['balance_total'] = $balance_total;
+	}
+	if (empty($params['amount']))
+	{
+		$params['amount'] = $amount;
+	}
+
+	/* PANGGIL SEMUA HOOKABLE bin_finance */
 	foreach (user_modules() as $mod)
 	{
 		$func = $mod.'_'.__FUNCTION__;
@@ -232,19 +306,7 @@ function bin_finance($bin_id, $type_id, $amount, $params=array(), $time = '')
 			$func($bin_id, $type_id, $amount, $params);
 		}
 	}
-	global $db, $sys;
-	$day     = date('j');
-	$month   = date('n');
-	$year    = date('Y');
-	$amount  = intval($amount);
-	$total   = intval($db->getOne("SELECT `total` FROM `bin_finance` WHERE 1 ORDER BY `id` DESC LIMIT 1"));
-	$type_id = intval($type_id);
-	$q       = "SELECT * FROM `bin_balance_type` WHERE `id`={$type_id}";
-	$type    = $db->getRow($q);
-	if (empty($type))
-	{
-		return false;
-	}
+	// TENTUKAN MESSAGE YANG ADA DI CATATAN HISTORY
 	$tpl = 'transaksi baru';
 	if (!empty($type['message']))
 	{
@@ -255,31 +317,28 @@ function bin_finance($bin_id, $type_id, $amount, $params=array(), $time = '')
 		$tpl = $type['name'];
 	}
 	$title = $sys->text_replace($tpl, $params);
-	if ($type['credit'])
-	{
-		$total -= $amount;
-		$credit = 1;
-	}else{
-		$total += $amount;
-		$credit = 0;
-	}
+
 	/* FINANCE TRANSACTION */
-	// yang disimpan hanya aktifasi dan transfer
 	$finance = $type['finance'] ? 1 : 0;
-	if (!empty($finance))
+	$credit  = $type['finance_credit'] ? 1 : 0;
+	if (!empty($type['finance']))
 	{
-		$time = empty($time) ? 'NOW()' : "'{$time}'";
 		$db->Execute("INSERT INTO `bin_finance` SET
 		  `title`        = '{$title}',
 		  `ondate`       = {$time},
 		  `credit`       = {$credit},
 		  `amount`       = {$amount},
-		  `total`        = {$total},
+		  `total`        = {$finance_total},
 		  `create_day`   = {$day},
 		  `create_month` = {$month},
-		  `create_year`  = {$year}
-			 ");
+		  `create_year`  = {$year}");
 	}
+	// Jika tidak berpengaruh di finance tp pengaruh di balance
+	if (empty($type['finance']) && !empty($type['balance']))
+	{
+		$credit = $type['balance_credit'] ? 0 : 1;
+	}
+
 	/* FINANCE ALL */
 	$d = $db->getRow("SELECT `id`, `amount` FROM `bin_finance_all` WHERE `type_id`={$type_id}");
 	if (!empty($d))
@@ -358,38 +417,30 @@ function bin_finance($bin_id, $type_id, $amount, $params=array(), $time = '')
 		}
 	}
 
+	/* BALANCE TRANSACTION */
 	if (!empty($type['balance']))
 	{
 		$member = bin_fetch_id($bin_id);
 		if (!empty($member))
 		{
-			if ($finance)
-			{
-				$credit = $credit ? 0 : 1;
-			}
+			$credit  = $type['balance_credit'] ? 1 : 0;
 			if ($credit)
 			{
-				$query = "UPDATE `bin` SET `balance`=(`balance`+{$amount}) WHERE `id`={$bin_id}";
-				$mcredit = 0;
-			}else{
 				$query = "UPDATE `bin` SET `balance`=(`balance`-{$amount}) WHERE `id`={$bin_id}";
-				$mcredit = 1;
+			}else{
+				$query = "UPDATE `bin` SET `balance`=(`balance`+{$amount}) WHERE `id`={$bin_id}";
 			}
 			$db->Execute($query);
-			$total = $db->getOne("SELECT `balance` FROM `bin` WHERE `id`={$bin_id}");
-			if (!is_numeric($total))
-			{
-				$total = intval($total);
-			}
+			$balance_total = intval($db->getOne("SELECT `balance` FROM `bin` WHERE `id`={$bin_id}"));
 			$db->Execute("INSERT INTO `bin_balance` SET
 			  `bin_id`       = {$bin_id},
 			  `type_id`      = {$type_id},
 			  `username`     = '{$member['username']}',
 			  `title`        = '{$title}',
 			  `ondate`       = NOW(),
-			  `credit`       = {$mcredit},
+			  `credit`       = {$credit},
 			  `amount`       = {$amount},
-			  `total`        = {$total},
+			  `total`        = {$balance_total},
 			  `create_day`   = {$day},
 			  `create_month` = {$month},
 			  `create_year`  = {$year}
@@ -401,7 +452,7 @@ function bin_finance($bin_id, $type_id, $amount, $params=array(), $time = '')
 			{
 				$q = "UPDATE `bin_bonus` SET `amount`=(`amount`+{$amount}) WHERE `id`=".$d['id'];
 			}else{
-				$q = "INSERT INTO `bin_bonus` SET `bin_id`={$bin_id}, `type_id`={$type_id}, `credit`={$mcredit}, `amount`={$amount}";
+				$q = "INSERT INTO `bin_bonus` SET `bin_id`={$bin_id}, `type_id`={$type_id}, `credit`={$credit}, `amount`={$amount}";
 			}
 			$db->Execute($q);
 
@@ -414,7 +465,7 @@ function bin_finance($bin_id, $type_id, $amount, $params=array(), $time = '')
 				$q = "INSERT INTO `bin_bonus_monthly` SET
 			  `bin_id`  = {$bin_id},
 			  `type_id` = {$type_id},
-			  `credit`  = {$mcredit},
+			  `credit`  = {$credit},
 			  `amount`  = {$amount},
 			  `month`   = {$month},
 			  `year`    = {$year} ";
@@ -430,7 +481,7 @@ function bin_finance($bin_id, $type_id, $amount, $params=array(), $time = '')
 				$q = "INSERT INTO `bin_bonus_daily` SET
 			  `bin_id`  = {$bin_id},
 			  `type_id` = {$type_id},
-			  `credit`  = {$mcredit},
+			  `credit`  = {$credit},
 			  `amount`  = {$amount},
 			  `day`     = {$day},
 			  `month`   = {$month},
