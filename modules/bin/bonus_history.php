@@ -46,7 +46,7 @@ if (empty($id))
 
 	foreach ($types as $type_id => $type)
 	{
-		$row = array($type['name']);
+		$row = array($type['link']);
 		foreach ($dates as $date)
 		{
 			list($year, $month, $day) = array_map('intval', explode('-', $date));

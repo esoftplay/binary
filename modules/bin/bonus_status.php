@@ -28,7 +28,7 @@ if (empty($id))
 		}else{
 			$total += $bonus['amount'];
 		}
-		$tables[] = array(ucwords($r_type[$bonus['type_id']]['name']), money($bonus['amount']));
+		$tables[] = array($r_type[$bonus['type_id']]['link'], money($bonus['amount']));
 	}
 	$tables[] = array('<b>Sisa Saldo</b>', '<b>'.money($total).'</b>');
 	echo table($tables, array('Keterangan', 'Total (Rp.)'));

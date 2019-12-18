@@ -133,15 +133,15 @@ if (!empty($id))
 			'checked'   => 'email'
 			)
 		);
-	if (empty($db->debug))
-	{
-		$params['config_post'] = array(
-			'vcode' => array(
-				'text' => 'Validation Code',
-				'type' => 'captcha'
-				)
-			);
-	}
+	// if (empty($db->debug))
+	// {
+	// 	$params['config_post'] = array(
+	// 		'vcode' => array(
+	// 			'text' => 'Validation Code',
+	// 			'type' => 'captcha'
+	// 			)
+	// 		);
+	// }
 
 	$form = _class('params');
 	$form->set($params);

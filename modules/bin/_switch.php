@@ -43,8 +43,11 @@ switch( $Bbc->mod['task'] )
 	case 'bonus_history': // daftar bonus apa aja yang pernah didapat
 		include 'bonus_history.php';
 		break;
-	case 'bonus_transfer': // data hostory pembayaran transfer yang sudah pernah diterima
+	case 'bonus_transfer': // data history pembayaran transfer yang sudah pernah diterima
 		include 'bonus_transfer.php';
+		break;
+	case 'bonus_saldo': // data history bonus dalam bentuk table list
+		include 'bonus_saldo.php';
 		break;
 
 	case 'reward': // melihat data reward yang tersedia dan di sini lah user bisa klaim jika reward tidak dibuat otomatis

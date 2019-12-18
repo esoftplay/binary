@@ -831,6 +831,10 @@ function bin_bonus_list()
 	$r = $db->cacheGetAssoc("SELECT id, name, message FROM `bin_balance_type` WHERE `balance`=1 AND `balance_credit`=0 AND `active`=1 ORDER BY id ASC");
 	if (!empty($r))
 	{
+		foreach ($r as $i => $d)
+		{
+			$r[$i]['link'] = '<a href="'._URL.'bin/bonus_saldo?type_id='.$i.'&return='.urlencode(seo_uri()).'">'.ucwords($d['name']).'</a>';
+		}
 		$Bbc->bin_bonus_list = $r;
 	}
 	return $Bbc->bin_bonus_list;

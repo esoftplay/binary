@@ -122,7 +122,7 @@
             foreach ($r_type as $key => $value)
             {
               $bonus = $db->getRow("SELECT amount,ondate FROM `bin_balance` WHERE `bin_id`={$id} AND `type_id`={$key} AND `ondate`='{$date}'");
-              $tables[] = array(ucwords($value['name']), money($bonus['amount']));
+              $tables[] = array($value['link'], money($bonus['amount']));
               $total += $bonus['amount'];
             }
             $tables[] = array('<b>'.lang('Jumlah').'</b>', '<b>'.money($total).'</b>');
