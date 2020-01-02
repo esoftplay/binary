@@ -21,6 +21,15 @@ if (empty($id))
 	$form->search->addInput('position', 'select');
 	$form->search->input->position->addOption([['', '--posisi--'], ['0', 'Kiri'], ['1', 'Kanan']]);
 
+	$type_count = $db->cacheGetOne("SELECT COUNT(*) FROM `bin_serial_type` WHERE 1");
+	if ($type_count > 1)
+	{
+		$form->search->addInput('serial_type_id', 'selecttable');
+		// $form->search->input->serial_type_id->setTitle('Level');
+		$form->search->input->serial_type_id->addOption('--Pilih Tipe--', '');
+		$form->search->input->serial_type_id->setReferenceTable('bin_serial_type');
+		$form->search->input->serial_type_id->setReferenceField( 'name', 'id' );
+	}
 	$level_count = $db->cacheGetOne("SELECT COUNT(*) FROM `bin_level` WHERE 1");
 	if ($level_count > 1)
 	{
@@ -76,6 +85,15 @@ if (empty($id))
 		return $a ? 'Kanan' : 'Kiri';
 	});
 
+	if ($type_count > 1)
+	{
+		$form->roll->addInput('serial_type_id', 'selecttable');
+		$form->roll->input->serial_type_id->setTitle('Tipe');
+		$form->roll->input->serial_type_id->setReferenceTable('bin_serial_type');
+		$form->roll->input->serial_type_id->setReferenceField( 'name', 'id' );
+		$form->roll->input->serial_type_id->setPlaintext(true);
+		$form->roll->input->serial_type_id->setDisplayColumn(empty($keyword['serial_type_id']));
+	}
 	if ($level_count > 1)
 	{
 		$form->roll->addInput('level_id', 'selecttable');
@@ -83,6 +101,7 @@ if (empty($id))
 		$form->roll->input->level_id->setReferenceTable('bin_level');
 		$form->roll->input->level_id->setReferenceField( 'name', 'id' );
 		$form->roll->input->level_id->setPlaintext(true);
+		$form->roll->input->level_id->setDisplayColumn(empty($keyword['level_id']));
 	}
 	if ($group_count > 2)
 	{
