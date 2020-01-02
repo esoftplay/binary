@@ -116,9 +116,18 @@ if (empty($id))
 
 	$form->roll->addInput('depth_upline','sqlplaintext');
 	$form->roll->input->depth_upline->setTitle('Kedalaman');
+	$form->roll->input->depth_upline->setDisplayColumn(false);
 	$form->roll->input->depth_upline->setDisplayFunction(function($a){
 		global $Bbc;
 		return money($a-$Bbc->member['depth_upline']);
+	});
+
+	$form->roll->addInput('depth_sponsor','sqlplaintext');
+	$form->roll->input->depth_sponsor->setTitle('Generasi');
+	$form->roll->input->depth_sponsor->setDisplayColumn(true);
+	$form->roll->input->depth_sponsor->setDisplayFunction(function($a){
+		global $Bbc;
+		return money($a-$Bbc->member['depth_sponsor']);
 	});
 
 	$form->roll->addInput( 'created', 'datetime' );
