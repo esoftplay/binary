@@ -59,7 +59,14 @@ if (empty($id))
 	$keyword = $form->search->keyword();
 	echo $form->search->getForm();
 
-	$table = '`bin` AS b LEFT JOIN `bin_list_down_line` AS d ON (d.`user_bin_id`=b.`id`)';
+	$tbl_line = 'bin_list_down_line';
+	if (isset($keyword['position']))
+	{
+		$add_sql = preg_replace('~`position`=[0-9]+\s+AND\s+~is', '', $add_sql);
+		$tbl_line = $keyword['position'] ? 'bin_list_down_right' : 'bin_list_down_left';
+	}
+
+	$table = '`bin` AS b LEFT JOIN `'.$tbl_line.'` AS d ON (d.`user_bin_id`=b.`id`)';
 	if (!empty($keyword['group_id']) || $group_count > 2)
 	{
 		$add_sql = preg_replace('~\s`group_id`=([0-9]+)~s', ' `group_ids` LIKE \'%,$1,%\'', $add_sql);
