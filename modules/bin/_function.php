@@ -828,7 +828,7 @@ function bin_bonus_list()
 	}
 	$Bbc->bin_bonus_list = array();
 	$plan_a = get_config('bin', 'plan_a');
-	$r = $db->cacheGetAssoc("SELECT id, name, message FROM `bin_balance_type` WHERE `balance`=1 AND `balance_credit`=0 AND `active`=1 ORDER BY id ASC");
+	$r = $db->cacheGetAssoc("SELECT id, name, message FROM `bin_balance_type` WHERE `balance`=1 AND `active`=1 ORDER BY id ASC");
 	if (!empty($r))
 	{
 		foreach ($r as $i => $d)
