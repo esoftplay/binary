@@ -14,36 +14,37 @@ if (empty($id))
 {
 	echo msg('Maaf, data yang anda akses bukan termasuk dalam jaringan anda', 'danger');
 }else{
-	$r_type          = bin_bonus_list();
-	$r_type_withdraw = $db->getAssoc('SELECT `id`, `name`, `message` FROM `bin_balance_type` WHERE `id`=2');
-	$r_type          = $r_type + $r_type_withdraw; // untuk merge array
-	$r_bonus         = $db->getAll("SELECT * FROM `bin_bonus` WHERE `bin_id`={$id}");
-	$tables          = array();
-	$total           = 0;
+	$r_type  = bin_bonus_list();
+	$r_bonus = $db->getAll("SELECT * FROM `bin_bonus` WHERE `bin_id`={$id}");
+	$rows    = array();
+	$columns = array_map('lang', array('Title', 'Debit', 'Credit', 'Balance'));
+	$credit  = 0;
+	$debit   = 0;
+	$balance = 0;
 	foreach ($r_bonus as $bonus)
 	{
+		$data = array(
+			$r_type[$bonus['type_id']]['link'],
+			'',
+			'',
+			'',
+			);
 		if ($bonus['credit'])
 		{
-			$total -= $bonus['amount'];
+			$credit += $bonus['amount'];
+			$data[2] = money($bonus['amount']);
 		}else{
-			$total += $bonus['amount'];
+			$debit  += $bonus['amount'];
+			$data[1] = money($bonus['amount']);
 		}
-		$tables[] = array($r_type[$bonus['type_id']]['link'], money($bonus['amount']));
+		$rows[] = $data;
 	}
-	$tables[] = array('<b>Sisa Saldo</b>', '<b>'.money($total).'</b>');
-	echo table($tables, array('Keterangan', 'Total (Rp.)'));
-	if (!empty($plan_a['is_withdraw']) && !empty($plan_a['min_transfer']))
-	{
-		if ($Bbc->member['balance'] >= $plan_a['min_transfer'])
-		{
-			if (!empty($Bbc->member['active']))
-			{
-				?>
-				<a href="index.php?mod=bin.bonus_status_withdraw" class="btn btn-default"><?php echo icon('fa-money').' '.lang('Tarik Dana'); ?></a>
-				<?php
-			}else{
-				echo msg(lang('Maaf, saat ini anda tidak memiliki akses untuk menarik bonus anda'), 'danger');
-			}
-		}
-	}
+	$balance = $debit - $credit;
+	$rows[]  = array(
+		'<b>'.lang('Total').'</b>',
+		'<b>'.money($debit).'</b>',
+		'<b>'.money($credit).'</b>',
+		'<b>'.money($balance).'</b>'
+		);
+	include tpl('bonus_status.html.php');
 }
