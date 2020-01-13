@@ -324,11 +324,18 @@ class bin_class
 			$this->levelType = 1;
 			$this->levelArr  = $this->db->getAssoc("SELECT `id`, `name` FROM `bin_level` WHERE 1");
 		}else{
-			$level_count = $this->db->cacheGetOne("SELECT COUNT(*) FROM `bbc_user_group` WHERE `is_admin`=0");
-			if ($level_count > 2) // user group level
+			$level_count = $this->db->cacheGetOne("SELECT COUNT(*) FROM `bin_serial_type` WHERE 1");
+			if ($level_count > 1)
 			{
 				$this->levelType = 2;
-				$this->levelArr  = $this->db->getAssoc("SELECT `id`, `name` FROM `bbc_user_group` WHERE `is_admin`=0");
+				$this->levelArr  = $this->db->getAssoc("SELECT `id`, `name` FROM `bin_serial_type` WHERE 1");
+			}else{
+				$level_count = $this->db->cacheGetOne("SELECT COUNT(*) FROM `bbc_user_group` WHERE `is_admin`=0");
+				if ($level_count > 2) // user group level
+				{
+					$this->levelType = 3;
+					$this->levelArr  = $this->db->getAssoc("SELECT `id`, `name` FROM `bbc_user_group` WHERE `is_admin`=0");
+				}
 			}
 		}
 	}
@@ -337,7 +344,7 @@ class bin_class
 		$output = $this->format($data['created']);
 		switch ($this->levelType)
 		{
-			case '2': // user group
+			case '3': // user group
 				$groupids = $this->db->getOne("SELECT `group_ids` FROM `bbc_user` WHERE `id`={$data['user_id']}");
 				$r = repairExplode($groupids);
 				foreach ($r as $i)
@@ -346,6 +353,12 @@ class bin_class
 					{
 						$output = $this->levelArr[$i];
 					}
+				}
+				break;
+			case '2': // serial type
+				if (!empty($this->levelArr[$data['serial_type_id']]))
+				{
+					$output = $this->levelArr[$data['serial_type_id']];
 				}
 				break;
 			case '1': // level binary

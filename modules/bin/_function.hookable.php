@@ -230,6 +230,10 @@ function bin_finance($bin_id, $type_id, $amount, $params=array(), $time = '')
 	$year    = date('Y');
 	$bin_id  = intval($bin_id);
 	$amount  = intval($amount);
+	if (empty($amount))
+	{
+		return false;
+	}
 	$type_id = intval($type_id);
 	$time    = empty($time) ? 'NOW()' : "'{$time}'";
 	$q       = "SELECT * FROM `bin_balance_type` WHERE `id`={$type_id}";
