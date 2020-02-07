@@ -51,7 +51,7 @@ if (empty($id))
 	}
 
 	$form->search->addInput('keyword','keyword');
-	$form->search->input->keyword->addSearchField('username, location_name, name', false);
+	$form->search->input->keyword->addSearchField('b.username, location_name, name', false);
 
 	$form->search->addExtraField('bin_id', $Bbc->member['id']);
 
