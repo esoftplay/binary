@@ -47,7 +47,7 @@ if (!empty($data))
 	}
 	$sys->nav_add($data['name']);
 	meta_title(lang('Detail Reward').' '. $data['name'], 2);
-	include 'reward_list_detail.html.php';
+	include tpl('reward_list_detail.html.php');
 }else{
 	echo msg('Maaf, Data Reward tidak ditemukan', 'danger');
 }

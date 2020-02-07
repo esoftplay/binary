@@ -40,7 +40,7 @@ $sys->set_layout('blank');
 		}else{
 			?>
 			<form action="" method="POST" class="form-inline" role="form">
-				<p>Sebelum anda memproses perbaikan jaringan networking dalam binary sebaiknya anda mem-backup terlebih dahulu table `bin` setelah itu nada bisa mengklik tombol di bawah</p>
+				<p>Sebelum anda memproses perbaikan jaringan networking dalam binary sebaiknya anda mem-backup terlebih dahulu table `bin` setelah itu anda bisa mengklik tombol di bawah</p>
 				<p>
 					<button class="btn btn-primary btn-lg" type="submit" name="submit" value="do_now">table `bin` sudah dibackup!</button>
 				</p>
