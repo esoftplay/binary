@@ -15,10 +15,10 @@ if (!empty($arr))
 				?>
 				<div class="item carousel-item<?php echo $active?>">
 					<div class="aboutIndex">
-			      <div class="container">
-			        <div class="row">
-			          <div class="col-md-8 aboutleftContent">
-			            <?php
+						<div class="container">
+							<div class="row">
+								<div class="col-md-8 aboutleftContent">
+									<?php
 									if($config['title'])
 									{
 										if($config['title_link'])
@@ -33,9 +33,9 @@ if (!empty($arr))
 										}
 									}
 									?>
-			            <p>
-			            	<?php 
-			            	echo $data['content'];
+									<p>
+										<?php 
+										echo $data['content'];
 										if (!empty($config['read_more']))
 										{
 											?>
@@ -46,11 +46,11 @@ if (!empty($arr))
 										}
 										?>
 									</p>
-			          </div>
-			          <div class="col-md-4" align="center">
-			            <?php echo (!empty($config['thumbnail'])) ? content_src($data['image'], ' class="img-responsive" title="'.$data['title'].'" alt="'.$data['title'].'"') : '';?>
-			          </div>
-			          <div class="col-md-12">
+								</div>
+								<div class="col-md-4" align="center">
+									<?php echo (!empty($config['thumbnail'])) ? content_src($data['image'], ' class="img-responsive" title="'.$data['title'].'" alt="'.$data['title'].'"') : '';?>
+								</div>
+								<div class="col-md-12">
 									<?php
 									if(	$config['created'] || $config['author'] )
 									{
@@ -100,9 +100,9 @@ if (!empty($arr))
 									}
 									?>
 								</div>
-			        </div>
-			      </div>
-			    </div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<?php
 			}
@@ -113,10 +113,10 @@ if (!empty($arr))
 		{
 			?>
 			<a class="left carousel-control" href="#myCarouselContent" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 			</a>
 			<a class="right carousel-control" href="#myCarouselContent" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			</a>
 			<?php
 		}

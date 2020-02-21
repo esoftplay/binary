@@ -15,24 +15,24 @@ if (!empty($cat['list']))
 			$block->title = '';
 		}
 		?>
-	  <div class="row">
-	  	<?php
-	  	foreach($cat['list'] AS $data)
+		<div class="row">
+			<?php
+			foreach($cat['list'] AS $data)
 			{
 				if (!empty($data['image']))
 				{
 					$link = content_link($data['id'], $data['title']);
 					?>
-			    <div class="column">
-			    	<a href="<?php echo $link;?>" title="<?php echo $data['title'];?>">
-				      <?php echo content_src($data['image'], ' class="hover-shadow cursor img-responsive" alt="'.$data['title'].'"', false); ?>
-			    	</a>
-			    </div>
+					<div class="column">
+						<a href="<?php echo $link;?>" title="<?php echo $data['title'];?>">
+							<?php echo content_src($data['image'], ' class="hover-shadow cursor img-responsive" alt="'.$data['title'].'"', false); ?>
+						</a>
+					</div>
 					<?php
 				}
 			}
-	  	?>
-	  </div>
+			?>
+		</div>
 	</section>
 	<?php
 }

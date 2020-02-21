@@ -14,16 +14,16 @@ if (!empty($arr))
 					$link   = content_link($data['id'], $data['title']);
 					?>
 					<div class="item carousel-item<?php echo $active?>">
-				    <div class="row">
-				      <div class="col-md-2"></div>
-				      <div class="col-md-3" align="center">
-				        <div class="card">
-				          <div class="card-body">
-		          			<?php echo (!empty($config['thumbnail']) && !empty($data['image'])) ? content_src($data['image'], ' class="img-responsive" title="'.$data['title'].'" alt="'.$data['title'].'"') : '';?>
-				          </div>
-				        </div>
-				      </div>
-				      <div class="col-md-6">
+						<div class="row">
+							<div class="col-md-2"></div>
+							<div class="col-md-3" align="center">
+								<div class="card">
+									<div class="card-body">
+										<?php echo (!empty($config['thumbnail']) && !empty($data['image'])) ? content_src($data['image'], ' class="img-responsive" title="'.$data['title'].'" alt="'.$data['title'].'"') : '';?>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
 								<?php
 								if($config['title'])
 								{
@@ -39,20 +39,20 @@ if (!empty($arr))
 									}
 								}
 								?>
-				        <p><?php echo $data['content'];?></p>
-				        <?php 
-				        if (!empty($config['read_more']))
-				        {
-				        	?>
-					        <a href="<?php echo $link ?>" class="btn btn-danger" style="background-color: #774500; color:#fff;">See More <i class="fa fa-arrow-right" aria-hidden="true" style="color: #ffff;"></i></a>
-				        	<?php
-				        }
-				        ?>
-				      </div>
-				    </div>
-				    <div class="row">
-				    	<?php
-				    	if(	$config['created'] || $config['author'] )
+								<p><?php echo $data['content'];?></p>
+								<?php 
+								if (!empty($config['read_more']))
+								{
+									?>
+									<a href="<?php echo $link ?>" class="btn btn-danger" style="background-color: #774500; color:#fff;">See More <i class="fa fa-arrow-right" aria-hidden="true" style="color: #ffff;"></i></a>
+									<?php
+								}
+								?>
+							</div>
+						</div>
+						<div class="row">
+							<?php
+							if(	$config['created'] || $config['author'] )
 							{
 								?>
 								<hr />
@@ -98,9 +98,9 @@ if (!empty($arr))
 								</div>
 								<?php
 							}
-				    	?>
-				    </div>
-				  </div>
+							?>
+						</div>
+					</div>
 					<?php
 				}
 				?>
@@ -109,12 +109,12 @@ if (!empty($arr))
 			if (count($arr) > 1) 
 			{
 				?>
-			  <a class="carousel-control left carousel-control-prev" href="#myCarouselContent" data-slide="prev">
-			    <i class="fa fa-angle-left"></i>
-			  </a>
-			  <a class="carousel-control right carousel-control-next" href="#myCarouselContent" data-slide="next">
-			    <i class="fa fa-angle-right"></i>
-			  </a>
+				<a class="carousel-control left carousel-control-prev" href="#myCarouselContent" data-slide="prev">
+					<i class="fa fa-angle-left"></i>
+				</a>
+				<a class="carousel-control right carousel-control-next" href="#myCarouselContent" data-slide="next">
+					<i class="fa fa-angle-right"></i>
+				</a>
 				<?php
 			}
 			?>

@@ -2,13 +2,13 @@
 ?>
 
 <div class="content product">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2><?php echo $cat['title'];?></h2>
-      </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2><?php echo $cat['title'];?></h2>
+			</div>
 
-      <div class="col-12">
+			<div class="col-12">
 				<?php
 				if($cat['total_page'] > 1)
 				{
@@ -18,9 +18,9 @@
 					<?php
 				}
 				?>
-    	</div>
-    
-      <div class="row">
+			</div>
+		
+			<div class="row">
 				<?php
 				$item = 0;
 				foreach((array)$cat['list'] AS $data)
@@ -29,32 +29,32 @@
 					$edit_data = (content_posted_permission() && $user->id == $data['created_by']) ? 1 : 0;
 					$link      = content_link($data['id'], $data['title']);
 					?>	
-				  <div class="col-md-4" align="center">
-				    <div class="col-md-12 text-center flex-wrap l-prod" id="demoObject2">
+					<div class="col-md-4" align="center">
+						<div class="col-md-12 text-center flex-wrap l-prod" id="demoObject2">
 							<div class="value-img">
 								<?php echo (!empty($config['thumbnail']) && !empty($data['image'])) ? content_src($data['image'], ' class="img-responsive"', true) : ''; ?>
-				      	<?php
-			  				if(!empty($config['title']))
+								<?php
+								if(!empty($config['title']))
 								{
 									if(!empty($config['title_link']))
 									{
 										?>
 										<a href="<?php echo $link;?>" title="<?php echo $data['title'];?>"><h4 class="text-center"><?php echo $data['title'];?></h4></a>
-						        <?php
-						      }else{
-						      	?>
-						      	<h4 class="text-center"><?php echo $data['title'];?></h4>
-						        <?php
-						      }
+										<?php
+									}else{
+										?>
+										<h4 class="text-center"><?php echo $data['title'];?></h4>
+										<?php
+									}
 								}
-				      	?>
+								?>
 							</div>
-			        <div class="text-justify">
-			        	<p><?php echo content_title(nl2br(strip_tags($data['intro'])),20);?></p>
-				        <?php 
-				        echo (!empty($config['read_more'])) ? ' <a href="'.$link.'" class="readmore">'.lang('Read more').'</a>' : '';
-				        echo '<div class="clearfix"></div><br/>';
-			        	if(	!empty($config['created']) || !empty($config['author'] ))
+							<div class="text-justify">
+								<p><?php echo content_title(nl2br(strip_tags($data['intro'])),20);?></p>
+								<?php 
+								echo (!empty($config['read_more'])) ? ' <a href="'.$link.'" class="readmore">'.lang('Read more').'</a>' : '';
+								echo '<div class="clearfix"></div><br/>';
+								if(	!empty($config['created']) || !empty($config['author'] ))
 								{
 									echo (!empty($config['author'])) ? '<span class="text-muted">'.lang('author').$data['created_by_alias'].'</span>' : '';
 									echo (!empty($config['created'])) ? '<span class="text-muted">'.lang('created').content_date($data['created']).'</span>' : '';
@@ -92,10 +92,10 @@
 										<?php
 									}
 								}
-			        	?>
-			        </div>
-				    </div>
-				  </div>
+								?>
+							</div>
+						</div>
+					</div>
 					<?php
 					if ($item%3==0)
 					{
@@ -103,10 +103,10 @@
 					}
 				}
 				?>
-      </div>
+			</div>
 
-      <div class="container text-center">        
-        <?php
+			<div class="container text-center">        
+				<?php
 				echo '<div class="text-center">'.page_list($cat['total'], $config['tot_list'], $page, 'page', $cat['link']).'</div>';
 				if (!empty($cat['rss']))
 				{
@@ -115,7 +115,7 @@
 					<?php
 				}
 				?>
-      </div>
-    </div>
-  </div>
+			</div>
+		</div>
+	</div>
 </div>

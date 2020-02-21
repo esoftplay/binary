@@ -1,8 +1,8 @@
 <?php  if (!defined('_VALID_BBC')) exit('No direct script access allowed'); ?>
 <div class="row">
-  <div class="col-md-12">
-    <h2><?php echo $cat['title'];?></h2>
-  </div>
+	<div class="col-md-12">
+		<h2><?php echo $cat['title'];?></h2>
+	</div>
 </div>
 <div class="row">
 	<div class="col-md-12 pb-4">
@@ -25,31 +25,31 @@
 		$edit_data = (content_posted_permission() && $user->id == $data['created_by']) ? 1 : 0;
 		$link      = content_link($data['id'], $data['title']);
 		?>	
-	  <div class="col-md-4" align="center">
-	    <div class="crd-prod">
+		<div class="col-md-4" align="center">
+			<div class="crd-prod">
 				<?php echo (!empty($config['thumbnail']) && !empty($data['image'])) ? content_src($data['image'], ' class="card-img-top"', true) : ''; ?>
-	      <div class="card-body">
-	      	<?php
-  				if(!empty($config['title']))
+				<div class="card-body">
+					<?php
+					if(!empty($config['title']))
 					{
 						if(!empty($config['title_link']))
 						{
 							?>
 							<a href="<?php echo $link;?>" title="<?php echo $data['title'];?>"><h6 class="text-left"><?php echo $data['title'];?></h6></a>
-			        <?php
-			      }else{
-			      	?>
-			      	<h6 class="text-left"><?php echo $data['title'];?></h6>
-			        <?php
-			      }
+							<?php
+						}else{
+							?>
+							<h6 class="text-left"><?php echo $data['title'];?></h6>
+							<?php
+						}
 					}
-	      	?>
-	        <div class="text-justify">
-	        	<span><?php echo content_title(nl2br(strip_tags($data['intro'])),20);?></span>
-		        <?php 
-		        echo (!empty($config['read_more'])) ? ' <a href="'.$link.'" class="readmore">'.lang('Read more').'</a>' : '';
-		        echo '<div class="clearfix"></div><br/>';
-	        	if(	!empty($config['created']) || !empty($config['author'] ))
+					?>
+					<div class="text-justify">
+						<span><?php echo content_title(nl2br(strip_tags($data['intro'])),20);?></span>
+						<?php 
+						echo (!empty($config['read_more'])) ? ' <a href="'.$link.'" class="readmore">'.lang('Read more').'</a>' : '';
+						echo '<div class="clearfix"></div><br/>';
+						if(	!empty($config['created']) || !empty($config['author'] ))
 						{
 							echo (!empty($config['author'])) ? '<span class="text-muted">'.lang('author').$data['created_by_alias'].'</span>' : '';
 							echo (!empty($config['created'])) ? '<span class="text-muted">'.lang('created').content_date($data['created']).'</span>' : '';
@@ -87,11 +87,11 @@
 								<?php
 							}
 						}
-	        	?>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
 		<?php
 		if ($item%3==0)
 		{

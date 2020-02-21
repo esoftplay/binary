@@ -1,85 +1,57 @@
 {
     "theme": [
         {
-            "id": "92",
-            "template_id": "8",
-            "name": "none",
-            "content": "[title][content]",
-            "active": "1"
-        },
-        {
-            "id": "93",
-            "template_id": "8",
-            "name": "menu",
-            "content": "<div class=”col-xs-12 col-sm-7 pull-right”>\r\n\t[title][content]\r\n<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "94",
-            "template_id": "8",
-            "name": "content_float",
-            "content": "<section class=”whyusIndex”>\r\n\t<div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12 text-center”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n    [content]\r\n  <\/div>\r\n<\/section>",
-            "active": "1"
-        },
-        {
-            "id": "95",
-            "template_id": "8",
-            "name": "testimonial",
-            "content": "<div class=”testiIndex”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-lg-12 text-center”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n    [content]\r\n  <\/div>\r\n<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "96",
-            "template_id": "8",
-            "name": "statistic_title",
-            "content": "<div class=”row”>\r\n  <div class=”col-lg-12 text-center”>\r\n    <h2>[title]<\/h2>\r\n  <\/div>\r\n<\/div>\r\n[content]",
-            "active": "1"
-        },
-        {
-            "id": "97",
-            "template_id": "8",
-            "name": "statistic_left",
-            "content": "<div class=”col-md-4 statMenu”>\r\n  [<div class=”text-center py-3 testiHead newMember”>\r\n    <img src=”templates\/haji_blue\/html\/img\/index\/icon_statistik1.png” class=”mr-2” style=”max-width: 15%;”>\r\n    <span>title<\/span>\r\n  <\/div>]\r\n\t[content]\r\n<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "98",
-            "template_id": "8",
-            "name": "statistic",
-            "content": "<div class=”col-md-4 statMenu”>\r\n  [<div class=”text-center py-3 testiHead topIncome”>\r\n    <img src=”templates\/haji_blue\/html\/img\/index\/icon_statistik1.png” class=”mr-2” style=”max-width: 15%;”>\r\n    <span>title<\/span>\r\n  <\/div>]\r\n\t[content]\r\n<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "99",
-            "template_id": "8",
-            "name": "statistic_right",
-            "content": "<div class=”col-md-4 statMenu”>\r\n  [<div class=”text-center py-3 testiHead topSponsor”>\r\n    <img src=”templates\/haji_blue\/html\/img\/index\/icon_statistik1.png” class=”mr-2” style=”max-width: 15%;”>\r\n    <span>title<\/span>\r\n  <\/div>]\r\n\t[content]\r\n<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "100",
-            "template_id": "8",
-            "name": "content_news",
-            "content": "<section class=”newsIndex”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12 text-center”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n\t\t[content]\r\n  <\/div>\r\n<\/section>",
-            "active": "1"
-        },
-        {
-            "id": "101",
-            "template_id": "8",
+            "id": "191",
+            "template_id": "5",
             "name": "footer_address",
             "content": "<div class=”col-lg-4 address”>[title][content]<\/div>",
             "active": "1"
         },
         {
-            "id": "102",
-            "template_id": "8",
+            "id": "190",
+            "template_id": "5",
+            "name": "content_news",
+            "content": "<section class=”newsIndex”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12 text-center”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n\t\t[content]\r\n  <\/div>\r\n<\/section>",
+            "active": "1"
+        },
+        {
+            "id": "185",
+            "template_id": "5",
+            "name": "testimonial",
+            "content": "<div class=”testiIndex”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-lg-12 text-center”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n    [content]\r\n  <\/div>\r\n<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "184",
+            "template_id": "5",
+            "name": "content_float",
+            "content": "<section class=”whyusIndex”>\r\n\t<div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12 text-center”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n    [content]\r\n  <\/div>\r\n<\/section>",
+            "active": "1"
+        },
+        {
+            "id": "182",
+            "template_id": "5",
+            "name": "none",
+            "content": "[title][content]",
+            "active": "1"
+        },
+        {
+            "id": "183",
+            "template_id": "5",
+            "name": "menu",
+            "content": "<div class=”col-xs-12 col-sm-7 pull-right”>\r\n\t[title][content]\r\n<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "192",
+            "template_id": "5",
             "name": "footer_logo",
             "content": "<div class=”col-lg-1”>[title][content]<\/div>",
             "active": "1"
         },
         {
-            "id": "103",
-            "template_id": "8",
+            "id": "193",
+            "template_id": "5",
             "name": "footer_sosmed",
             "content": "<div class=”col-lg-7 text-right”>[title][content]<\/div>",
             "active": "1"
@@ -102,8 +74,8 @@
         "14": "content_list",
         "15": "content_tag",
         "16": "bin_testimonial",
-        "17": "sosmed",
-        "18": "bin_statistic"
+        "17": "bin_statistic",
+        "18": "sosmed"
     },
     "position": {
         "1": "left",
@@ -122,14 +94,14 @@
     },
     "block": [
         {
-            "id": "158",
-            "template_id": "8",
-            "block_ref_id": "9",
-            "position_id": "7",
-            "show_title": "0",
+            "id": "351",
+            "template_id": "5",
+            "block_ref_id": "17",
+            "position_id": "9",
+            "show_title": "1",
             "link": "",
             "cache": "0",
-            "theme_id": "92",
+            "theme_id": "182",
             "group_ids": ",all,",
             "menu_ids": ",all,",
             "menu_ids_blocked": "",
@@ -137,69 +109,146 @@
             "module_ids_blocked": "",
             "config": {
                 "template": "",
-                "image": "images\/uploads\/logo_3.png",
-                "size": "60",
-                "is_link": "1",
-                "link": "",
-                "title": "",
-                "attribute": "class=”navbar-brand”"
+                "cat": [
+                    "1",
+                    "2",
+                    "3"
+                ],
+                "limit": "10"
             },
-            "orderby": "1",
+            "orderby": "3",
             "active": "1"
         },
         {
-            "id": "159",
-            "template_id": "8",
-            "block_ref_id": "8",
-            "position_id": "5",
+            "id": "292",
+            "template_id": "5",
+            "block_ref_id": "3",
+            "position_id": "9",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "93",
-            "group_ids": ",unassigned,",
-            "menu_ids": ",all,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "forget": "0",
-                "register": "0"
-            },
-            "orderby": "1",
-            "active": "1"
-        },
-        {
-            "id": "160",
-            "template_id": "8",
-            "block_ref_id": "10",
-            "position_id": "5",
-            "show_title": "0",
-            "link": "",
-            "cache": "0",
-            "theme_id": "93",
+            "theme_id": "182",
             "group_ids": ",all,",
-            "menu_ids": ",all,",
+            "menu_ids": ",-1,",
             "menu_ids_blocked": "",
             "module_ids_allowed": "",
             "module_ids_blocked": "",
             "config": {
-                "template": "menu-horizontal",
+                "template": "thumbnail-only",
+                "kind_id": "1",
+                "type_id": "1",
+                "cat_id": "2",
+                "ids": "",
+                "popular": "",
+                "limit_title": "75",
+                "limit_title_by": "char",
+                "title": "0",
+                "title_link": "0",
+                "intro": "blank",
+                "created": "0",
+                "modified": "0",
+                "author": "0",
+                "tag": "0",
+                "tag_link": "0",
+                "rating": "0",
+                "read_more": "0",
+                "tot_list": "8",
+                "thumbnail": "1"
+            },
+            "orderby": "6",
+            "active": "1"
+        },
+        {
+            "id": "291",
+            "template_id": "5",
+            "block_ref_id": "3",
+            "position_id": "9",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "190",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "grid",
+                "kind_id": "-1",
+                "type_id": "1",
                 "cat_id": "1",
-                "submenu": "bottom right"
+                "ids": "",
+                "popular": "",
+                "limit_title": "75",
+                "limit_title_by": "char",
+                "title": "1",
+                "title_link": "1",
+                "intro": "intro",
+                "created": "1",
+                "modified": "0",
+                "author": "1",
+                "tag": "0",
+                "tag_link": "0",
+                "rating": "0",
+                "read_more": "1",
+                "tot_list": "4",
+                "thumbnail": "1"
+            },
+            "orderby": "5",
+            "active": "1"
+        },
+        {
+            "id": "290",
+            "template_id": "5",
+            "block_ref_id": "6",
+            "position_id": "9",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "182",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "join-us",
+                "caption": "#Bergabunglah dan Sukses Bersama Kami"
+            },
+            "orderby": "4",
+            "active": "1"
+        },
+        {
+            "id": "285",
+            "template_id": "5",
+            "block_ref_id": "16",
+            "position_id": "9",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "185",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "tag_type": "1",
+                "limit": "3"
             },
             "orderby": "2",
             "active": "1"
         },
         {
-            "id": "161",
-            "template_id": "8",
+            "id": "283",
+            "template_id": "5",
             "block_ref_id": "13",
             "position_id": "3",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "92",
+            "theme_id": "182",
             "group_ids": ",all,",
             "menu_ids": ",-1,",
             "menu_ids_blocked": "",
@@ -215,14 +264,14 @@
             "active": "1"
         },
         {
-            "id": "162",
-            "template_id": "8",
+            "id": "284",
+            "template_id": "5",
             "block_ref_id": "3",
             "position_id": "9",
             "show_title": "1",
             "link": "",
             "cache": "0",
-            "theme_id": "94",
+            "theme_id": "184",
             "group_ids": ",all,",
             "menu_ids": ",-1,",
             "menu_ids_blocked": "",
@@ -254,229 +303,84 @@
             "active": "1"
         },
         {
-            "id": "163",
-            "template_id": "8",
-            "block_ref_id": "16",
-            "position_id": "9",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "95",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "tag_type": "1",
-                "limit": "3"
-            },
-            "orderby": "2",
-            "active": "1"
-        },
-        {
-            "id": "164",
-            "template_id": "8",
-            "block_ref_id": "4",
-            "position_id": "4",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "96",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "content": "",
-                "type": "none"
-            },
-            "orderby": "1",
-            "active": "1"
-        },
-        {
-            "id": "165",
-            "template_id": "8",
-            "block_ref_id": "18",
-            "position_id": "4",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "97",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "cat": [
-                    "1"
-                ],
-                "limit": "10"
-            },
-            "orderby": "2",
-            "active": "1"
-        },
-        {
-            "id": "166",
-            "template_id": "8",
-            "block_ref_id": "18",
-            "position_id": "4",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "98",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "cat": [
-                    "2"
-                ],
-                "limit": "10"
-            },
-            "orderby": "3",
-            "active": "1"
-        },
-        {
-            "id": "167",
-            "template_id": "8",
-            "block_ref_id": "18",
-            "position_id": "4",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "99",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "cat": [
-                    "3"
-                ],
-                "limit": "10"
-            },
-            "orderby": "4",
-            "active": "1"
-        },
-        {
-            "id": "168",
-            "template_id": "8",
-            "block_ref_id": "6",
-            "position_id": "13",
+            "id": "281",
+            "template_id": "5",
+            "block_ref_id": "8",
+            "position_id": "5",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "92",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
+            "theme_id": "183",
+            "group_ids": ",unassigned,",
+            "menu_ids": ",all,",
             "menu_ids_blocked": "",
             "module_ids_allowed": "",
             "module_ids_blocked": "",
             "config": {
-                "template": "join-us",
-                "caption": "#Bergabunglah dan Sukses Bersama Kami"
+                "template": "",
+                "forget": "0",
+                "register": "1"
             },
             "orderby": "1",
             "active": "1"
         },
         {
-            "id": "169",
-            "template_id": "8",
-            "block_ref_id": "3",
-            "position_id": "13",
-            "show_title": "1",
+            "id": "282",
+            "template_id": "5",
+            "block_ref_id": "10",
+            "position_id": "5",
+            "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "100",
+            "theme_id": "183",
             "group_ids": ",all,",
-            "menu_ids": ",-1,",
+            "menu_ids": ",all,",
             "menu_ids_blocked": "",
             "module_ids_allowed": "",
             "module_ids_blocked": "",
             "config": {
-                "template": "grid",
-                "kind_id": "-1",
-                "type_id": "1",
+                "template": "menu-horizontal",
                 "cat_id": "1",
-                "ids": "",
-                "popular": "",
-                "limit_title": "75",
-                "limit_title_by": "char",
-                "title": "1",
-                "title_link": "1",
-                "intro": "intro",
-                "created": "1",
-                "modified": "0",
-                "author": "1",
-                "tag": "0",
-                "tag_link": "0",
-                "rating": "0",
-                "read_more": "1",
-                "tot_list": "4",
-                "thumbnail": "1"
+                "submenu": "bottom right"
             },
             "orderby": "2",
             "active": "1"
         },
         {
-            "id": "170",
-            "template_id": "8",
-            "block_ref_id": "3",
-            "position_id": "13",
+            "id": "280",
+            "template_id": "5",
+            "block_ref_id": "9",
+            "position_id": "7",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "92",
+            "theme_id": "182",
             "group_ids": ",all,",
-            "menu_ids": ",-1,",
+            "menu_ids": ",all,",
             "menu_ids_blocked": "",
             "module_ids_allowed": "",
             "module_ids_blocked": "",
             "config": {
-                "template": "thumbnail-only",
-                "kind_id": "1",
-                "type_id": "1",
-                "cat_id": "2",
-                "ids": "",
-                "popular": "",
-                "limit_title": "75",
-                "limit_title_by": "char",
-                "title": "0",
-                "title_link": "0",
-                "intro": "blank",
-                "created": "0",
-                "modified": "0",
-                "author": "0",
-                "tag": "0",
-                "tag_link": "0",
-                "rating": "0",
-                "read_more": "0",
-                "tot_list": "8",
-                "thumbnail": "1"
+                "template": "",
+                "image": "images\/uploads\/logo_3.png",
+                "size": "60",
+                "is_link": "1",
+                "link": "",
+                "title": "",
+                "attribute": "class=”navbar-brand”"
             },
-            "orderby": "3",
+            "orderby": "1",
             "active": "1"
         },
         {
-            "id": "171",
-            "template_id": "8",
+            "id": "293",
+            "template_id": "5",
             "block_ref_id": "9",
             "position_id": "6",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "102",
+            "theme_id": "192",
             "group_ids": ",all,",
             "menu_ids": ",all,",
             "menu_ids_blocked": "",
@@ -495,14 +399,14 @@
             "active": "1"
         },
         {
-            "id": "172",
-            "template_id": "8",
+            "id": "294",
+            "template_id": "5",
             "block_ref_id": "4",
             "position_id": "6",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "101",
+            "theme_id": "191",
             "group_ids": ",all,",
             "menu_ids": ",all,",
             "menu_ids_blocked": "",
@@ -517,14 +421,14 @@
             "active": "1"
         },
         {
-            "id": "173",
-            "template_id": "8",
-            "block_ref_id": "17",
+            "id": "295",
+            "template_id": "5",
+            "block_ref_id": "18",
             "position_id": "6",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "103",
+            "theme_id": "193",
             "group_ids": ",all,",
             "menu_ids": ",all,",
             "menu_ids_blocked": "",
@@ -541,53 +445,44 @@
         }
     ],
     "text": {
-        "158": {
+        "280": {
             "id": "Logo"
         },
-        "159": {
+        "281": {
             "id": "Login"
         },
-        "160": {
+        "282": {
             "id": "Menu Utama"
         },
-        "161": {
+        "283": {
             "id": "Imageslider"
         },
-        "162": {
+        "284": {
             "id": "Why Us"
         },
-        "163": {
+        "285": {
             "id": "Testimonial"
         },
-        "164": {
-            "id": "Statistik Member"
-        },
-        "165": {
-            "id": "Top Member"
-        },
-        "166": {
-            "id": "Top Income"
-        },
-        "167": {
-            "id": "Top Sponsor"
-        },
-        "168": {
+        "290": {
             "id": "Join Us"
         },
-        "169": {
+        "291": {
             "id": "News"
         },
-        "170": {
+        "292": {
             "id": "Gallery"
         },
-        "171": {
+        "293": {
             "id": "Logo Footer"
         },
-        "172": {
+        "294": {
             "id": "Address Footer"
         },
-        "173": {
+        "295": {
             "id": "Footer Sosmed"
+        },
+        "351": {
+            "id": "Statistik Member"
         }
     }
 }

@@ -1,71 +1,57 @@
 {
     "theme": [
         {
-            "id": "49",
-            "template_id": "4",
-            "name": "footer_sosmed",
-            "content": "<div class=”col-lg-7 text-right address_2”>[title][content]<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "50",
-            "template_id": "4",
-            "name": "content_news",
-            "content": "<section class=”news-index”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n\t\t[content]\r\n  <\/div>\r\n<\/section>",
-            "active": "1"
-        },
-        {
-            "id": "47",
-            "template_id": "4",
-            "name": "footer_logo",
-            "content": "<div class=”col-lg-1”>[title][content]<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "48",
-            "template_id": "4",
-            "name": "footer_address",
-            "content": "<div class=”col-lg-4 address”>[title][content]<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "46",
-            "template_id": "4",
-            "name": "statistic_title",
-            "content": "<div class=”col-12 text-center mb-5”>\r\n  <h2 class=”text-white”>[title]<\/h2>\r\n<\/div>\r\n[content]",
-            "active": "1"
-        },
-        {
-            "id": "45",
-            "template_id": "4",
-            "name": "statistic",
-            "content": "<div class=”col-md-4 margin_tb20”>\r\n\t[<div class=”text-center py-3 panel_head”>\r\n\t\t<img src=”templates\/beauty_yellow\/html\/img\/index\/icon_statistik1.png” class=”img-fluid mr-2”>\r\n\t\t<span>title<\/span>\r\n\t<\/div>]\r\n\t[content]\r\n<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "44",
-            "template_id": "4",
-            "name": "testimonial",
-            "content": "<section class=”testi-index”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n    [content]\r\n  <\/div>\r\n<\/section>",
-            "active": "1"
-        },
-        {
-            "id": "42",
-            "template_id": "4",
-            "name": "none",
-            "content": "[title][content]",
-            "active": "1"
-        },
-        {
-            "id": "43",
-            "template_id": "4",
+            "id": "223",
+            "template_id": "2",
             "name": "content_slider",
             "content": "<section class=”product-index”>\r\n  [<div class=”row”>\r\n    <div class=”col-md-12”>\r\n      <h2>title<\/h2>\r\n    <\/div>\r\n  <\/div>]\r\n  [content]\r\n<\/section>",
             "active": "1"
         },
         {
-            "id": "51",
-            "template_id": "4",
+            "id": "222",
+            "template_id": "2",
+            "name": "none",
+            "content": "[title][content]",
+            "active": "1"
+        },
+        {
+            "id": "221",
+            "template_id": "2",
+            "name": "testimonial",
+            "content": "<section class=”testi-index”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n    [content]\r\n  <\/div>\r\n<\/section>",
+            "active": "1"
+        },
+        {
+            "id": "217",
+            "template_id": "2",
+            "name": "footer_logo",
+            "content": "<div class=”col-lg-1”>[title][content]<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "218",
+            "template_id": "2",
+            "name": "footer_address",
+            "content": "<div class=”col-lg-4 address”>[title][content]<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "216",
+            "template_id": "2",
+            "name": "content_news",
+            "content": "<section class=”news-index”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n\t\t[content]\r\n  <\/div>\r\n<\/section>",
+            "active": "1"
+        },
+        {
+            "id": "215",
+            "template_id": "2",
+            "name": "footer_sosmed",
+            "content": "<div class=”col-lg-7 text-right address_2”>[title][content]<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "224",
+            "template_id": "2",
             "name": "banner",
             "content": "<div class=”jumbotron jumbotron-fluid”>\r\n\t[title][content]\r\n<\/div>",
             "active": "1"
@@ -88,8 +74,8 @@
         "14": "content_list",
         "15": "content_tag",
         "16": "bin_testimonial",
-        "17": "sosmed",
-        "18": "bin_statistic"
+        "17": "bin_statistic",
+        "18": "sosmed"
     },
     "position": {
         "1": "left",
@@ -108,323 +94,14 @@
     },
     "block": [
         {
-            "id": "87",
-            "template_id": "4",
-            "block_ref_id": "3",
-            "position_id": "13",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "50",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "grid",
-                "kind_id": "-1",
-                "type_id": "1",
-                "cat_id": "1",
-                "ids": "",
-                "popular": "",
-                "limit_title": "75",
-                "limit_title_by": "char",
-                "title": "1",
-                "title_link": "1",
-                "intro": "intro",
-                "created": "0",
-                "modified": "0",
-                "author": "1",
-                "tag": "0",
-                "tag_link": "0",
-                "rating": "0",
-                "read_more": "1",
-                "tot_list": "4",
-                "thumbnail": "1"
-            },
-            "orderby": "2",
-            "active": "1"
-        },
-        {
-            "id": "86",
-            "template_id": "4",
-            "block_ref_id": "3",
-            "position_id": "13",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "42",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "thumbnail-only",
-                "kind_id": "1",
-                "type_id": "1",
-                "cat_id": "2",
-                "ids": "",
-                "popular": "",
-                "limit_title": "75",
-                "limit_title_by": "char",
-                "title": "0",
-                "title_link": "0",
-                "intro": "blank",
-                "created": "0",
-                "modified": "0",
-                "author": "0",
-                "tag": "0",
-                "tag_link": "0",
-                "rating": "0",
-                "read_more": "0",
-                "tot_list": "8",
-                "thumbnail": "1"
-            },
-            "orderby": "3",
-            "active": "1"
-        },
-        {
-            "id": "85",
-            "template_id": "4",
-            "block_ref_id": "17",
-            "position_id": "6",
-            "show_title": "0",
-            "link": "",
-            "cache": "0",
-            "theme_id": "49",
-            "group_ids": ",all,",
-            "menu_ids": ",all,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "footer",
-                "title": "Instagram, Twitter, Facebook, Youtube, Linkedin",
-                "link": "https:\/\/www.instagram.com\/, https:\/\/www.twitter.com\/, https:\/\/www.facebook.com\/, https:\/\/www.youtube.com\/, https:\/\/www.linkedin.com\/",
-                "icon": "fa fa-instagram, fa fa-twitter, fa fa-facebook-f, fa fa-youtube, fa fa-linkedin-square"
-            },
-            "orderby": "3",
-            "active": "1"
-        },
-        {
-            "id": "84",
-            "template_id": "4",
-            "block_ref_id": "4",
-            "position_id": "6",
-            "show_title": "0",
-            "link": "",
-            "cache": "0",
-            "theme_id": "48",
-            "group_ids": ",all,",
-            "menu_ids": ",all,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "content": "Jl.Ahmad Wahid,Kalangan,Baturetno,<br>Banguntapan,Bantul,Yogyakarta,55197<br>Office : 0274-452 155<br>Phone : 081 226 272 827<br>Email : cro2@esoftdream.net",
-                "type": "none"
-            },
-            "orderby": "2",
-            "active": "1"
-        },
-        {
-            "id": "82",
-            "template_id": "4",
-            "block_ref_id": "4",
-            "position_id": "4",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "46",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "content": "",
-                "type": "none"
-            },
-            "orderby": "1",
-            "active": "1"
-        },
-        {
-            "id": "83",
-            "template_id": "4",
-            "block_ref_id": "9",
-            "position_id": "6",
-            "show_title": "0",
-            "link": "",
-            "cache": "0",
-            "theme_id": "47",
-            "group_ids": ",all,",
-            "menu_ids": ",all,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "image": "images\/uploads\/logo_footer.png",
-                "size": "",
-                "is_link": "1",
-                "link": "",
-                "title": "",
-                "attribute": "class=”s_icon”"
-            },
-            "orderby": "1",
-            "active": "1"
-        },
-        {
-            "id": "79",
-            "template_id": "4",
-            "block_ref_id": "18",
-            "position_id": "4",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "45",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "cat": [
-                    "1"
-                ],
-                "limit": "10"
-            },
-            "orderby": "2",
-            "active": "1"
-        },
-        {
-            "id": "80",
-            "template_id": "4",
-            "block_ref_id": "18",
-            "position_id": "4",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "45",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "cat": [
-                    "2"
-                ],
-                "limit": "10"
-            },
-            "orderby": "3",
-            "active": "1"
-        },
-        {
-            "id": "81",
-            "template_id": "4",
-            "block_ref_id": "18",
-            "position_id": "4",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "45",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "cat": [
-                    "3"
-                ],
-                "limit": "10"
-            },
-            "orderby": "4",
-            "active": "1"
-        },
-        {
-            "id": "78",
-            "template_id": "4",
-            "block_ref_id": "16",
-            "position_id": "9",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "44",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "tag_type": "1",
-                "limit": "5"
-            },
-            "orderby": "1",
-            "active": "1"
-        },
-        {
-            "id": "75",
-            "template_id": "4",
-            "block_ref_id": "8",
-            "position_id": "5",
-            "show_title": "0",
-            "link": "",
-            "cache": "0",
-            "theme_id": "42",
-            "group_ids": ",unassigned,",
-            "menu_ids": ",all,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "forget": "0",
-                "register": "0"
-            },
-            "orderby": "2",
-            "active": "1"
-        },
-        {
-            "id": "76",
-            "template_id": "4",
-            "block_ref_id": "13",
-            "position_id": "3",
-            "show_title": "0",
-            "link": "",
-            "cache": "0",
-            "theme_id": "42",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "cat_id": "1",
-                "control": "1"
-            },
-            "orderby": "1",
-            "active": "1"
-        },
-        {
-            "id": "77",
-            "template_id": "4",
+            "id": "342",
+            "template_id": "2",
             "block_ref_id": "3",
             "position_id": "8",
             "show_title": "1",
             "link": "",
             "cache": "0",
-            "theme_id": "43",
+            "theme_id": "223",
             "group_ids": ",all,",
             "menu_ids": ",-1,",
             "menu_ids_blocked": "",
@@ -452,18 +129,233 @@
                 "tot_list": "9",
                 "thumbnail": "1"
             },
+            "orderby": "3",
+            "active": "1"
+        },
+        {
+            "id": "341",
+            "template_id": "2",
+            "block_ref_id": "13",
+            "position_id": "8",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "222",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "cat_id": "1",
+                "control": "1"
+            },
             "orderby": "1",
             "active": "1"
         },
         {
-            "id": "73",
-            "template_id": "4",
+            "id": "339",
+            "template_id": "2",
+            "block_ref_id": "16",
+            "position_id": "9",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "221",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "tag_type": "1",
+                "limit": "5"
+            },
+            "orderby": "1",
+            "active": "1"
+        },
+        {
+            "id": "340",
+            "template_id": "2",
+            "block_ref_id": "8",
+            "position_id": "5",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "222",
+            "group_ids": ",unassigned,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "forget": "0",
+                "register": "1"
+            },
+            "orderby": "2",
+            "active": "1"
+        },
+        {
+            "id": "335",
+            "template_id": "2",
+            "block_ref_id": "9",
+            "position_id": "6",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "217",
+            "group_ids": ",all,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "image": "images\/uploads\/logo_footer.png",
+                "size": "",
+                "is_link": "1",
+                "link": "",
+                "title": "",
+                "attribute": "class=”s_icon”"
+            },
+            "orderby": "1",
+            "active": "1"
+        },
+        {
+            "id": "333",
+            "template_id": "2",
+            "block_ref_id": "4",
+            "position_id": "6",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "218",
+            "group_ids": ",all,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "content": "Jl.Ahmad Wahid,Kalangan,Baturetno,<br>Banguntapan,Bantul,Yogyakarta,55197<br>Office : 0274-452 155<br>Phone : 081 226 272 827<br>Email : cro2@esoftdream.net",
+                "type": "none"
+            },
+            "orderby": "2",
+            "active": "1"
+        },
+        {
+            "id": "332",
+            "template_id": "2",
+            "block_ref_id": "18",
+            "position_id": "6",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "215",
+            "group_ids": ",all,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "footer",
+                "title": "Instagram, Twitter, Facebook, Youtube, Linkedin",
+                "link": "https:\/\/www.instagram.com\/, https:\/\/www.twitter.com\/, https:\/\/www.facebook.com\/, https:\/\/www.youtube.com\/, https:\/\/www.linkedin.com\/",
+                "icon": "fa fa-instagram, fa fa-twitter, fa fa-facebook-f, fa fa-youtube, fa fa-linkedin-square"
+            },
+            "orderby": "3",
+            "active": "1"
+        },
+        {
+            "id": "330",
+            "template_id": "2",
+            "block_ref_id": "3",
+            "position_id": "9",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "216",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "grid",
+                "kind_id": "-1",
+                "type_id": "1",
+                "cat_id": "1",
+                "ids": "",
+                "popular": "",
+                "limit_title": "75",
+                "limit_title_by": "char",
+                "title": "1",
+                "title_link": "1",
+                "intro": "intro",
+                "created": "0",
+                "modified": "0",
+                "author": "1",
+                "tag": "0",
+                "tag_link": "0",
+                "rating": "0",
+                "read_more": "1",
+                "tot_list": "4",
+                "thumbnail": "1"
+            },
+            "orderby": "4",
+            "active": "1"
+        },
+        {
+            "id": "331",
+            "template_id": "2",
+            "block_ref_id": "3",
+            "position_id": "9",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "222",
+            "group_ids": ",all,",
+            "menu_ids": ",-1,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "thumbnail-only",
+                "kind_id": "1",
+                "type_id": "1",
+                "cat_id": "2",
+                "ids": "",
+                "popular": "",
+                "limit_title": "75",
+                "limit_title_by": "char",
+                "title": "0",
+                "title_link": "0",
+                "intro": "blank",
+                "created": "0",
+                "modified": "0",
+                "author": "0",
+                "tag": "0",
+                "tag_link": "0",
+                "rating": "0",
+                "read_more": "0",
+                "tot_list": "8",
+                "thumbnail": "1"
+            },
+            "orderby": "5",
+            "active": "1"
+        },
+        {
+            "id": "343",
+            "template_id": "2",
             "block_ref_id": "9",
             "position_id": "7",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "42",
+            "theme_id": "222",
             "group_ids": ",all,",
             "menu_ids": ",all,",
             "menu_ids_blocked": "",
@@ -482,14 +374,14 @@
             "active": "1"
         },
         {
-            "id": "74",
-            "template_id": "4",
+            "id": "344",
+            "template_id": "2",
             "block_ref_id": "10",
             "position_id": "5",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "42",
+            "theme_id": "222",
             "group_ids": ",all,",
             "menu_ids": ",all,",
             "menu_ids_blocked": "",
@@ -504,14 +396,14 @@
             "active": "1"
         },
         {
-            "id": "72",
-            "template_id": "4",
-            "block_ref_id": "17",
+            "id": "345",
+            "template_id": "2",
+            "block_ref_id": "18",
             "position_id": "10",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "42",
+            "theme_id": "222",
             "group_ids": ",all,",
             "menu_ids": ",all,",
             "menu_ids_blocked": "",
@@ -527,14 +419,14 @@
             "active": "1"
         },
         {
-            "id": "88",
-            "template_id": "4",
+            "id": "346",
+            "template_id": "2",
             "block_ref_id": "6",
-            "position_id": "13",
+            "position_id": "9",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "42",
+            "theme_id": "222",
             "group_ids": ",all,",
             "menu_ids": ",-1,78,",
             "menu_ids_blocked": "",
@@ -544,18 +436,18 @@
                 "template": "join-us",
                 "caption": "#Bergabunglah dan Sukses Bersama Kami"
             },
-            "orderby": "1",
+            "orderby": "3",
             "active": "1"
         },
         {
-            "id": "89",
-            "template_id": "4",
+            "id": "347",
+            "template_id": "2",
             "block_ref_id": "9",
-            "position_id": "3",
+            "position_id": "8",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "51",
+            "theme_id": "224",
             "group_ids": ",all,",
             "menu_ids": ",all,",
             "menu_ids_blocked": ",-1,",
@@ -572,62 +464,79 @@
             },
             "orderby": "2",
             "active": "1"
+        },
+        {
+            "id": "348",
+            "template_id": "2",
+            "block_ref_id": "17",
+            "position_id": "9",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "222",
+            "group_ids": ",all,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "cat": [
+                    "1",
+                    "2",
+                    "3"
+                ],
+                "limit": "10"
+            },
+            "orderby": "2",
+            "active": "1"
         }
     ],
     "text": {
-        "84": {
-            "id": "Address Footer"
-        },
-        "83": {
-            "id": "Logo Footer"
-        },
-        "82": {
-            "id": "Statistik Member"
-        },
-        "81": {
-            "id": "Top Sponsor"
-        },
-        "80": {
-            "id": "Top Income"
-        },
-        "79": {
-            "id": "Top Member"
-        },
-        "78": {
-            "id": "Testimonial"
-        },
-        "77": {
-            "id": "Our Product"
-        },
-        "76": {
-            "id": "Imageslider"
-        },
-        "75": {
-            "id": "Login Link"
-        },
-        "74": {
-            "id": "Menu Utama"
-        },
-        "73": {
-            "id": "Logo"
-        },
-        "72": {
+        "345": {
             "id": "Sosial Media"
         },
-        "85": {
+        "343": {
+            "id": "Logo"
+        },
+        "344": {
+            "id": "Menu Utama"
+        },
+        "340": {
+            "id": "Login Link"
+        },
+        "341": {
+            "id": "Imageslider"
+        },
+        "342": {
+            "id": "Our Product"
+        },
+        "339": {
+            "id": "Testimonial"
+        },
+        "335": {
+            "id": "Logo Footer"
+        },
+        "333": {
+            "id": "Address Footer"
+        },
+        "332": {
             "id": "Footer Sosmed"
         },
-        "86": {
+        "331": {
             "id": "Gallery"
         },
-        "87": {
+        "330": {
             "id": "News"
         },
-        "88": {
+        "346": {
             "id": "Join Us"
         },
-        "89": {
+        "347": {
             "id": "Banner"
+        },
+        "348": {
+            "id": "Statistik Member"
         }
     }
 }

@@ -1,71 +1,57 @@
 {
     "theme": [
         {
-            "id": "61",
-            "template_id": "3",
-            "name": "banner",
-            "content": "<div class=”jumbotron jumbotron-fluid”>\r\n\t[title][content]\r\n<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "59",
-            "template_id": "3",
-            "name": "footer_sosmed",
-            "content": "<div class=”col-lg-7 text-right address_2”>[title][content]<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "60",
-            "template_id": "3",
-            "name": "content_news",
-            "content": "<section class=”news-index”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n\t\t[content]\r\n  <\/div>\r\n<\/section>",
-            "active": "1"
-        },
-        {
-            "id": "56",
-            "template_id": "3",
-            "name": "statistic_title",
-            "content": "<div class=”col-12 text-center mb-5”>\r\n  <h2 class=”text-white”>[title]<\/h2>\r\n<\/div>\r\n[content]",
-            "active": "1"
-        },
-        {
-            "id": "57",
-            "template_id": "3",
-            "name": "footer_logo",
-            "content": "<div class=”col-lg-1”>[title][content]<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "58",
-            "template_id": "3",
-            "name": "footer_address",
-            "content": "<div class=”col-lg-4 address”>[title][content]<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "55",
-            "template_id": "3",
-            "name": "statistic",
-            "content": "<div class=”col-md-4 margin_tb20”>\r\n\t[<div class=”text-center py-3 panel_head”>\r\n\t\t<img src=”templates\/beauty_yellow\/html\/img\/index\/icon_statistik1.png” class=”img-fluid mr-2”>\r\n\t\t<span>title<\/span>\r\n\t<\/div>]\r\n\t[content]\r\n<\/div>",
-            "active": "1"
-        },
-        {
-            "id": "54",
-            "template_id": "3",
-            "name": "testimonial",
-            "content": "<section class=”testi-index”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n    [content]\r\n  <\/div>\r\n<\/section>",
-            "active": "1"
-        },
-        {
-            "id": "52",
-            "template_id": "3",
+            "id": "202",
+            "template_id": "4",
             "name": "none",
             "content": "[title][content]",
             "active": "1"
         },
         {
-            "id": "53",
-            "template_id": "3",
+            "id": "201",
+            "template_id": "4",
+            "name": "testimonial",
+            "content": "<section class=”testi-index”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n    [content]\r\n  <\/div>\r\n<\/section>",
+            "active": "1"
+        },
+        {
+            "id": "199",
+            "template_id": "4",
+            "name": "footer_address",
+            "content": "<div class=”col-lg-4 address”>[title][content]<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "198",
+            "template_id": "4",
+            "name": "footer_logo",
+            "content": "<div class=”col-lg-1”>[title][content]<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "196",
+            "template_id": "4",
+            "name": "content_news",
+            "content": "<section class=”news-index”>\r\n  <div class=”container”>\r\n    [<div class=”row”>\r\n      <div class=”col-md-12”>\r\n        <h2>title<\/h2>\r\n      <\/div>\r\n    <\/div>]\r\n\t\t[content]\r\n  <\/div>\r\n<\/section>",
+            "active": "1"
+        },
+        {
+            "id": "194",
+            "template_id": "4",
+            "name": "banner",
+            "content": "<div class=”jumbotron jumbotron-fluid”>\r\n\t[title][content]\r\n<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "195",
+            "template_id": "4",
+            "name": "footer_sosmed",
+            "content": "<div class=”col-lg-7 text-right address_2”>[title][content]<\/div>",
+            "active": "1"
+        },
+        {
+            "id": "203",
+            "template_id": "4",
             "name": "content_slider",
             "content": "<section class=”product-index”>\r\n  [<div class=”row”>\r\n    <div class=”col-md-12”>\r\n      <h2>title<\/h2>\r\n    <\/div>\r\n  <\/div>]\r\n  [content]\r\n<\/section>",
             "active": "1"
@@ -88,8 +74,8 @@
         "14": "content_list",
         "15": "content_tag",
         "16": "bin_testimonial",
-        "17": "sosmed",
-        "18": "bin_statistic"
+        "17": "bin_statistic",
+        "18": "sosmed"
     },
     "position": {
         "1": "left",
@@ -108,100 +94,159 @@
     },
     "block": [
         {
-            "id": "106",
-            "template_id": "3",
-            "block_ref_id": "6",
-            "position_id": "13",
-            "show_title": "0",
+            "id": "350",
+            "template_id": "4",
+            "block_ref_id": "17",
+            "position_id": "9",
+            "show_title": "1",
             "link": "",
             "cache": "0",
-            "theme_id": "52",
+            "theme_id": "202",
+            "group_ids": ",all,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "cat": [
+                    "1",
+                    "2",
+                    "3"
+                ],
+                "limit": "10"
+            },
+            "orderby": "2",
+            "active": "1"
+        },
+        {
+            "id": "307",
+            "template_id": "4",
+            "block_ref_id": "16",
+            "position_id": "9",
+            "show_title": "1",
+            "link": "",
+            "cache": "0",
+            "theme_id": "201",
             "group_ids": ",all,",
             "menu_ids": ",-1,",
             "menu_ids_blocked": "",
             "module_ids_allowed": "",
             "module_ids_blocked": "",
             "config": {
-                "template": "join-us",
-                "caption": "#Bergabunglah dan Sukses Bersama Kami"
+                "template": "",
+                "tag_type": "1",
+                "limit": "5"
             },
             "orderby": "1",
             "active": "1"
         },
         {
-            "id": "107",
-            "template_id": "3",
+            "id": "308",
+            "template_id": "4",
             "block_ref_id": "9",
-            "position_id": "3",
+            "position_id": "7",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "61",
+            "theme_id": "202",
             "group_ids": ",all,",
             "menu_ids": ",all,",
-            "menu_ids_blocked": ",-1,",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "image": "images\/uploads\/banner_about.png",
-                "size": "",
-                "is_link": "0",
-                "link": "",
-                "title": "",
-                "attribute": "width=”100%”"
-            },
-            "orderby": "2",
-            "active": "1"
-        },
-        {
-            "id": "105",
-            "template_id": "3",
-            "block_ref_id": "3",
-            "position_id": "13",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "60",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
             "menu_ids_blocked": "",
             "module_ids_allowed": "",
             "module_ids_blocked": "",
             "config": {
-                "template": "grid",
-                "kind_id": "-1",
-                "type_id": "1",
-                "cat_id": "1",
-                "ids": "",
-                "popular": "",
-                "limit_title": "75",
-                "limit_title_by": "char",
-                "title": "1",
-                "title_link": "1",
-                "intro": "intro",
-                "created": "0",
-                "modified": "0",
-                "author": "1",
-                "tag": "0",
-                "tag_link": "0",
-                "rating": "0",
-                "read_more": "1",
-                "tot_list": "4",
-                "thumbnail": "1"
+                "template": "",
+                "image": "images\/uploads\/logo.png",
+                "size": "",
+                "is_link": "1",
+                "link": "\/",
+                "title": "Logo MLM",
+                "attribute": ""
+            },
+            "orderby": "1",
+            "active": "1"
+        },
+        {
+            "id": "305",
+            "template_id": "4",
+            "block_ref_id": "9",
+            "position_id": "6",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "198",
+            "group_ids": ",all,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "image": "images\/uploads\/logo.png",
+                "size": "",
+                "is_link": "1",
+                "link": "",
+                "title": "",
+                "attribute": "class=”s_icon”"
+            },
+            "orderby": "1",
+            "active": "1"
+        },
+        {
+            "id": "306",
+            "template_id": "4",
+            "block_ref_id": "4",
+            "position_id": "6",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "199",
+            "group_ids": ",all,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "",
+                "content": "Jl.Ahmad Wahid,Kalangan,Baturetno,<br>Banguntapan,Bantul,Yogyakarta,55197<br>Office : 0274-452 155<br>Phone : 081 226 272 827<br>Email : cro2@esoftdream.net",
+                "type": "none"
             },
             "orderby": "2",
             "active": "1"
         },
         {
-            "id": "104",
-            "template_id": "3",
-            "block_ref_id": "3",
-            "position_id": "13",
+            "id": "300",
+            "template_id": "4",
+            "block_ref_id": "18",
+            "position_id": "6",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "52",
+            "theme_id": "195",
+            "group_ids": ",all,",
+            "menu_ids": ",all,",
+            "menu_ids_blocked": "",
+            "module_ids_allowed": "",
+            "module_ids_blocked": "",
+            "config": {
+                "template": "footer",
+                "title": "Instagram, Twitter, Facebook, Youtube, Linkedin",
+                "link": "https:\/\/www.instagram.com\/, https:\/\/www.twitter.com\/, https:\/\/www.facebook.com\/, https:\/\/www.youtube.com\/, https:\/\/www.linkedin.com\/",
+                "icon": "fa fa-instagram, fa fa-twitter, fa fa-facebook-f, fa fa-youtube, fa fa-linkedin-square"
+            },
+            "orderby": "3",
+            "active": "1"
+        },
+        {
+            "id": "299",
+            "template_id": "4",
+            "block_ref_id": "3",
+            "position_id": "9",
+            "show_title": "0",
+            "link": "",
+            "cache": "0",
+            "theme_id": "202",
             "group_ids": ",all,",
             "menu_ids": ",-1,",
             "menu_ids_blocked": "",
@@ -229,231 +274,104 @@
                 "tot_list": "8",
                 "thumbnail": "1"
             },
-            "orderby": "3",
+            "orderby": "5",
             "active": "1"
         },
         {
-            "id": "103",
-            "template_id": "3",
-            "block_ref_id": "17",
-            "position_id": "6",
-            "show_title": "0",
-            "link": "",
-            "cache": "0",
-            "theme_id": "59",
-            "group_ids": ",all,",
-            "menu_ids": ",all,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "footer",
-                "title": "Instagram, Twitter, Facebook, Youtube, Linkedin",
-                "link": "https:\/\/www.instagram.com\/, https:\/\/www.twitter.com\/, https:\/\/www.facebook.com\/, https:\/\/www.youtube.com\/, https:\/\/www.linkedin.com\/",
-                "icon": "fa fa-instagram, fa fa-twitter, fa fa-facebook-f, fa fa-youtube, fa fa-linkedin-square"
-            },
-            "orderby": "3",
-            "active": "1"
-        },
-        {
-            "id": "97",
-            "template_id": "3",
-            "block_ref_id": "18",
-            "position_id": "4",
+            "id": "298",
+            "template_id": "4",
+            "block_ref_id": "3",
+            "position_id": "9",
             "show_title": "1",
             "link": "",
             "cache": "0",
-            "theme_id": "55",
+            "theme_id": "196",
             "group_ids": ",all,",
             "menu_ids": ",-1,",
             "menu_ids_blocked": "",
             "module_ids_allowed": "",
             "module_ids_blocked": "",
             "config": {
-                "template": "",
-                "cat": [
-                    "1"
-                ],
-                "limit": "10"
-            },
-            "orderby": "2",
-            "active": "1"
-        },
-        {
-            "id": "98",
-            "template_id": "3",
-            "block_ref_id": "18",
-            "position_id": "4",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "55",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "cat": [
-                    "2"
-                ],
-                "limit": "10"
-            },
-            "orderby": "3",
-            "active": "1"
-        },
-        {
-            "id": "99",
-            "template_id": "3",
-            "block_ref_id": "18",
-            "position_id": "4",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "55",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "cat": [
-                    "3"
-                ],
-                "limit": "10"
+                "template": "grid",
+                "kind_id": "-1",
+                "type_id": "1",
+                "cat_id": "1",
+                "ids": "",
+                "popular": "",
+                "limit_title": "75",
+                "limit_title_by": "char",
+                "title": "1",
+                "title_link": "1",
+                "intro": "intro",
+                "created": "0",
+                "modified": "0",
+                "author": "1",
+                "tag": "0",
+                "tag_link": "0",
+                "rating": "0",
+                "read_more": "1",
+                "tot_list": "4",
+                "thumbnail": "1"
             },
             "orderby": "4",
             "active": "1"
         },
         {
-            "id": "100",
-            "template_id": "3",
-            "block_ref_id": "4",
-            "position_id": "4",
-            "show_title": "1",
+            "id": "296",
+            "template_id": "4",
+            "block_ref_id": "6",
+            "position_id": "9",
+            "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "56",
+            "theme_id": "202",
             "group_ids": ",all,",
             "menu_ids": ",-1,",
             "menu_ids_blocked": "",
             "module_ids_allowed": "",
             "module_ids_blocked": "",
             "config": {
-                "template": "",
-                "content": "",
-                "type": "none"
+                "template": "join-us",
+                "caption": "#Bergabunglah dan Sukses Bersama Kami"
             },
-            "orderby": "1",
+            "orderby": "3",
             "active": "1"
         },
         {
-            "id": "101",
-            "template_id": "3",
+            "id": "297",
+            "template_id": "4",
             "block_ref_id": "9",
-            "position_id": "6",
+            "position_id": "8",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "57",
+            "theme_id": "194",
             "group_ids": ",all,",
             "menu_ids": ",all,",
-            "menu_ids_blocked": "",
+            "menu_ids_blocked": ",-1,",
             "module_ids_allowed": "",
             "module_ids_blocked": "",
             "config": {
                 "template": "",
-                "image": "images\/uploads\/logo.png",
+                "image": "images\/uploads\/banner_about.png",
                 "size": "",
-                "is_link": "1",
+                "is_link": "0",
                 "link": "",
                 "title": "",
-                "attribute": "class=”s_icon”"
-            },
-            "orderby": "1",
-            "active": "1"
-        },
-        {
-            "id": "102",
-            "template_id": "3",
-            "block_ref_id": "4",
-            "position_id": "6",
-            "show_title": "0",
-            "link": "",
-            "cache": "0",
-            "theme_id": "58",
-            "group_ids": ",all,",
-            "menu_ids": ",all,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "content": "Jl.Ahmad Wahid,Kalangan,Baturetno,<br>Banguntapan,Bantul,Yogyakarta,55197<br>Office : 0274-452 155<br>Phone : 081 226 272 827<br>Email : cro2@esoftdream.net",
-                "type": "none"
+                "attribute": "width=”100%”"
             },
             "orderby": "2",
             "active": "1"
         },
         {
-            "id": "96",
-            "template_id": "3",
-            "block_ref_id": "16",
-            "position_id": "9",
-            "show_title": "1",
-            "link": "",
-            "cache": "0",
-            "theme_id": "54",
-            "group_ids": ",all,",
-            "menu_ids": ",-1,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "tag_type": "1",
-                "limit": "5"
-            },
-            "orderby": "1",
-            "active": "1"
-        },
-        {
-            "id": "91",
-            "template_id": "3",
-            "block_ref_id": "9",
-            "position_id": "7",
-            "show_title": "0",
-            "link": "",
-            "cache": "0",
-            "theme_id": "52",
-            "group_ids": ",all,",
-            "menu_ids": ",all,",
-            "menu_ids_blocked": "",
-            "module_ids_allowed": "",
-            "module_ids_blocked": "",
-            "config": {
-                "template": "",
-                "image": "images\/uploads\/logo.png",
-                "size": "",
-                "is_link": "1",
-                "link": "\/",
-                "title": "Logo MLM",
-                "attribute": ""
-            },
-            "orderby": "1",
-            "active": "1"
-        },
-        {
-            "id": "92",
-            "template_id": "3",
+            "id": "309",
+            "template_id": "4",
             "block_ref_id": "10",
             "position_id": "5",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "52",
+            "theme_id": "202",
             "group_ids": ",all,",
             "menu_ids": ",all,",
             "menu_ids_blocked": "",
@@ -468,14 +386,14 @@
             "active": "1"
         },
         {
-            "id": "93",
-            "template_id": "3",
+            "id": "310",
+            "template_id": "4",
             "block_ref_id": "8",
             "position_id": "5",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "52",
+            "theme_id": "202",
             "group_ids": ",unassigned,",
             "menu_ids": ",all,",
             "menu_ids_blocked": "",
@@ -484,20 +402,20 @@
             "config": {
                 "template": "",
                 "forget": "0",
-                "register": "0"
+                "register": "1"
             },
             "orderby": "2",
             "active": "1"
         },
         {
-            "id": "94",
-            "template_id": "3",
+            "id": "311",
+            "template_id": "4",
             "block_ref_id": "13",
-            "position_id": "3",
+            "position_id": "8",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "52",
+            "theme_id": "202",
             "group_ids": ",all,",
             "menu_ids": ",-1,",
             "menu_ids_blocked": "",
@@ -512,14 +430,14 @@
             "active": "1"
         },
         {
-            "id": "95",
-            "template_id": "3",
+            "id": "312",
+            "template_id": "4",
             "block_ref_id": "3",
             "position_id": "8",
             "show_title": "1",
             "link": "",
             "cache": "0",
-            "theme_id": "53",
+            "theme_id": "203",
             "group_ids": ",all,",
             "menu_ids": ",-1,",
             "menu_ids_blocked": "",
@@ -547,18 +465,18 @@
                 "tot_list": "9",
                 "thumbnail": "1"
             },
-            "orderby": "1",
+            "orderby": "3",
             "active": "1"
         },
         {
-            "id": "90",
-            "template_id": "3",
-            "block_ref_id": "17",
+            "id": "313",
+            "template_id": "4",
+            "block_ref_id": "18",
             "position_id": "10",
             "show_title": "0",
             "link": "",
             "cache": "0",
-            "theme_id": "52",
+            "theme_id": "202",
             "group_ids": ",all,",
             "menu_ids": ",all,",
             "menu_ids_blocked": "",
@@ -575,58 +493,49 @@
         }
     ],
     "text": {
-        "104": {
-            "id": "Gallery"
-        },
-        "103": {
-            "id": "Footer Sosmed"
-        },
-        "102": {
-            "id": "Address Footer"
-        },
-        "101": {
-            "id": "Logo Footer"
-        },
-        "100": {
+        "350": {
             "id": "Statistik Member"
         },
-        "99": {
-            "id": "Top Sponsor"
-        },
-        "98": {
-            "id": "Top Income"
-        },
-        "97": {
-            "id": "Top Member"
-        },
-        "96": {
-            "id": "Testimonial"
-        },
-        "95": {
-            "id": "Our Product"
-        },
-        "94": {
-            "id": "Imageslider"
-        },
-        "93": {
-            "id": "Login Link"
-        },
-        "92": {
-            "id": "Menu Utama"
-        },
-        "91": {
-            "id": "Logo"
-        },
-        "90": {
+        "313": {
             "id": "Sosial Media"
         },
-        "105": {
+        "308": {
+            "id": "Logo"
+        },
+        "309": {
+            "id": "Menu Utama"
+        },
+        "310": {
+            "id": "Login Link"
+        },
+        "311": {
+            "id": "Imageslider"
+        },
+        "312": {
+            "id": "Our Product"
+        },
+        "307": {
+            "id": "Testimonial"
+        },
+        "305": {
+            "id": "Logo Footer"
+        },
+        "306": {
+            "id": "Address Footer"
+        },
+        "300": {
+            "id": "Footer Sosmed"
+        },
+        "299": {
+            "id": "Gallery"
+        },
+        "298": {
             "id": "News"
         },
-        "106": {
+        "296": {
             "id": "Join Us"
         },
-        "107": {
+        "297": {
             "id": "Banner"
         }
     }

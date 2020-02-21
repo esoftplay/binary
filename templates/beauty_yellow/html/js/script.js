@@ -59,3 +59,12 @@ $(function() {
     $('.slider-1 .slick-next').click();
   }, 1000);
 })
+
+function showPswd() {
+  var x = document.getElementById("myPassword");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}

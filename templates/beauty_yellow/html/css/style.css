@@ -585,6 +585,113 @@ hr {
 	}
 
 
+	/*LOGIN PAGE*/
+	.pageLogin {
+		background-image: url(../img/image1.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding: 180px 15px 120px;
+	}
+
+	.pageLogin .loginBox {
+		background-color: white;
+		padding-bottom: 15px;
+	}
+
+	.pageLogin .loginBox .usernameLogin {
+		margin-top: 15px;
+		margin-bottom: 10px;
+	}
+
+	.pageLogin .loginBox h4 {
+		padding: 0 20px;
+		font-weight: 700;
+		color: #593007;
+		letter-spacing: 2px;
+	}
+
+	.pageLogin .loginBox .logoLogin {
+		padding: 20px 20px 10px;
+	}
+
+	.pageLogin .loginBox .usernameLogin .input-group-addon {
+		background-color: transparent;
+		border: 0;
+		border-bottom: 1px solid #593007;
+		border-radius: 0;
+	}
+
+	.pageLogin .loginBox .usernameLogin .form-control {
+		border: 0;
+		border-radius: 0;
+		box-shadow: 0 0 0;
+		border-bottom: 1px solid #593007;
+	}
+
+	.pageLogin .loginBox .passwordLogin {
+		margin-top: 15px;
+		margin-bottom: 10px;
+	}
+
+	.pageLogin .loginBox .passwordLogin .input-group-addon {
+		background-color: transparent;
+		border: 0;
+		border-bottom: 1px solid #593007;
+		border-radius: 0;
+	}
+
+	.pageLogin .loginBox .passwordLogin .form-control {
+		border: 0;
+		border-radius: 0;
+		box-shadow: 0 0 0;
+		border-bottom: 1px solid #593007;
+	}
+
+	.pageLogin .loginBox .captaLogin {
+		margin-top: 15px;
+		margin-bottom: 10px;
+	}
+
+	.pageLogin .loginBox .captaLogin img {
+		height: 40%;
+	}
+
+	.pageLogin .loginBox .captaLogin .input-group-addon {
+		background-color: transparent;
+		border: 0;
+		border-bottom: 1px solid #593007;
+		border-radius: 0;
+	}
+
+	.pageLogin .loginBox .captaLogin .form-control {
+		border: 0;
+		border-radius: 0;
+		box-shadow: 0 0 0;
+		border-bottom: 1px solid #593007;
+	}
+
+	.pageLogin .loginBox .captchaImage img {
+		margin-top: 20px;
+	}
+
+	.pageLogin .loginBox .formLoginBtn .btn-primary {
+		margin: 25px 0 15px;
+		padding: 4px 50px;
+		border-radius: 20px;
+		border-color: #593007;
+		background-color: #593007;
+	}
+
+	.pageLogin .loginBox .toRegistrasi p {
+		margin: 10px 0 15px;
+		opacity: 0.5;
+	}
+
+	.pageLogin .loginBox .toRegistrasi a {
+		font-weight: 700;
+	}
+
+
 /*Responsive*/
 
 
@@ -834,6 +941,9 @@ hr {
 }
 
 @media (min-width: 1440px) {
+	.pageLogin {
+		padding: 180px 15px 18%;
+	}
 	.slider .item {
 		overflow: hidden;
 		position: relative;

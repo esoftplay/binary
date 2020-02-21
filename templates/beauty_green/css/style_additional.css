@@ -1,3 +1,16 @@
+.menu_top ul > li > a{
+	margin-top: 0px;
+	padding-top: 23px;
+	/*padding-bottom: 25px;*/
+}
+.menu_top{
+	margin-bottom: 5px;
+}
+.navbar img{
+	width: 43px;
+	margin-left: 
+}
+
 a:hover {
 	text-decoration: none !important;
 }
@@ -9,6 +22,11 @@ a:hover {
 .button_info {
 	color:white !important; 
 	background-color: #16a6f9;	
+}
+
+/*PAGE LOGIN*/
+.pageLogin {
+  background-image: url(../html/img/image1.png);
 }
 .login_button {
 	float: right;
@@ -23,7 +41,7 @@ a:hover {
 }
 
 .navbar {
-	margin-bottom: 0;
+	margin-top: 22px;
 }
 
 
@@ -335,6 +353,6 @@ body > div.jumbotron {
 }
 .content_wrapper .contact .testi img {
 	border-radius: 50%;
-	width: 70%;
+	width: 100%;
 	margin-top: 0;
 }

@@ -1,14 +1,14 @@
 <?php  if (!defined('_VALID_BBC')) exit('No direct script access allowed'); ?>
 <div class="row">
-  <div class="col-md-6">
-  	<?php
-  	$data      = reset($cat['list']); 
-  	$edit_data = (content_posted_permission() && $user->id == $data['created_by']) ? 1 : 0;
+	<div class="col-md-6">
+		<?php
+		$data      = reset($cat['list']); 
+		$edit_data = (content_posted_permission() && $user->id == $data['created_by']) ? 1 : 0;
 		$link      = content_link($data['id'], $data['title']);
 
 		echo (!empty($config['thumbnail']) && !empty($data['image'])) ? content_src($data['image'], ' class="img-responsive" alt="'.$data['title'].'" style="width:100%; border:15px solid #e8e8e8"', false) : '';
 		?>
-    <div class="news-phar">
+		<div class="news-phar">
 			<?php
 			if(!empty($config['title']))
 			{
@@ -16,28 +16,28 @@
 				{
 					?>
 					<a href="<?php echo $link;?>" title="<?php echo $data['title'];?>"><h4 style="color:#774500; font-weight: 400"><?php echo $data['title'];?></h4></a>
-	        <?php
-	      }else{
-	      	?>
-	      	<h4 style="color:#774500; font-weight: 400"><?php echo $data['title'];?></h4>
-	        <?php
-	      }
+					<?php
+				}else{
+					?>
+					<h4 style="color:#774500; font-weight: 400"><?php echo $data['title'];?></h4>
+					<?php
+				}
 			}
 			?>
-      <p><?php echo @$data[$config['intro']];?></p>
-      <?php echo (!empty($config['read_more'])) ? '<a href="'.$link.'" class="readmore">'.lang('Read more').'</a>' : '';?>
-      <div class="clearfix"></div>
-    </div>
+			<p><?php echo @$data[$config['intro']];?></p>
+			<?php echo (!empty($config['read_more'])) ? '<a href="'.$link.'" class="readmore">'.lang('Read more').'</a>' : '';?>
+			<div class="clearfix"></div>
+		</div>
 		<?php
 		if(	!empty($config['created']) || !empty($config['author'] ))
-    {
-    	?>
-      <span>
-      	<?php echo (!empty($config['author'])) ? content_date($data['created']) : ''; ?> 
-      	<span style="font-weight: bold; color:#774500;"><?php echo (!empty($config['author'])) ? ' by '.ucwords($data['created_by_alias']) : ''; ?></span>
-      </span>
-    	<?php
-    }
+		{
+			?>
+			<span>
+				<?php echo (!empty($config['author'])) ? content_date($data['created']) : ''; ?> 
+				<span style="font-weight: bold; color:#774500;"><?php echo (!empty($config['author'])) ? ' by '.ucwords($data['created_by_alias']) : ''; ?></span>
+			</span>
+			<?php
+		}
 		if( !empty($config['tag']) )
 		{
 			?>
@@ -79,9 +79,9 @@
 			</div>
 			<?php
 		}
-  	?>
-  </div>
-  <div class="col-md-6">
+		?>
+	</div>
+	<div class="col-md-6">
 		<?php
 		unset($cat['list'][0]);
 		foreach ($cat['list'] as $k => $data)
@@ -90,51 +90,51 @@
 			$link      = content_link($data['id'], $data['title']);
 			$padding   = $k == 1 ? ' pb-4' : ($k%2 == 0 ? ' py-2' : ' py-4');			
 			?>
-		    <div class="row<?php echo $padding?>">
-		    	<?php
-	    		$col1 = 0;
-		    	if (!empty($config['thumbnail']) && !empty($data['image']))
-		    	{
-		    		$col1 = 4;
-		    		?>
-			      <div class="col-md-<?php echo $col1?>" align="center">
-			    		<?php echo content_src($data['image'], ' class="news-img img-responsive" alt="'.$data['title'].'"', false); ?>
-			      </div>
-		    		<?php
-		    	}
-		    	$col2 = 12 - $col1;
-		    	?>
-		      <div class="col-md-<?php echo $col2?> no-both">
-		      	<?php
-		      	if(!empty($config['title']))
-		      	{
-		      		if(!empty($config['title_link']))
-		      		{
-		      			?>
-		      			<a href="<?php echo $link;?>" title="<?php echo $data['title'];?>"><h4 style=" color:#774500; font-weight: 400"><?php echo $data['title'];?></h4></a>
-		      			<?php
-		      		}else{
-		      			?>
-				        <h4 style=" color:#774500; font-weight: 400"><?php echo $data['title'];?></h4>
-		      			<?php
-		      		}
-		      	}
-		      	?>
-		        <p><?php echo @$data[$config['intro']];?></p>
-			      <?php echo (!empty($config['read_more'])) ? '<a href="'.$link.'" class="readmore">'.lang('Read more').'</a>' : '';?>
-			      <div class="clearfix"></div>
-		        <?php
-		        if(	!empty($config['created']) || !empty($config['author'] ))
-		        {
-		        	?>
-			        <span>
-			        	<?php echo (!empty($config['created'])) ? content_date($data['created']) : ''; ?> 
-			        	<span style="font-weight: bold; color:#774500;"><?php echo (!empty($config['author'])) ? ' by '.ucwords($data['created_by_alias']) : ''; ?></span>
-				      </span>
-		        	<?php
-		        }
+				<div class="row<?php echo $padding?>">
+					<?php
+					$col1 = 0;
+					if (!empty($config['thumbnail']) && !empty($data['image']))
+					{
+						$col1 = 4;
+						?>
+						<div class="col-md-<?php echo $col1?>" align="center">
+							<?php echo content_src($data['image'], ' class="news-img img-responsive" alt="'.$data['title'].'"', false); ?>
+						</div>
+						<?php
+					}
+					$col2 = 12 - $col1;
+					?>
+					<div class="col-md-<?php echo $col2?> no-both">
+						<?php
+						if(!empty($config['title']))
+						{
+							if(!empty($config['title_link']))
+							{
+								?>
+								<a href="<?php echo $link;?>" title="<?php echo $data['title'];?>"><h4 style=" color:#774500; font-weight: 400"><?php echo $data['title'];?></h4></a>
+								<?php
+							}else{
+								?>
+								<h4 style=" color:#774500; font-weight: 400"><?php echo $data['title'];?></h4>
+								<?php
+							}
+						}
+						?>
+						<p><?php echo @$data[$config['intro']];?></p>
+						<?php echo (!empty($config['read_more'])) ? '<a href="'.$link.'" class="readmore">'.lang('Read more').'</a>' : '';?>
+						<div class="clearfix"></div>
+						<?php
+						if(	!empty($config['created']) || !empty($config['author'] ))
+						{
+							?>
+							<span>
+								<?php echo (!empty($config['created'])) ? content_date($data['created']) : ''; ?> 
+								<span style="font-weight: bold; color:#774500;"><?php echo (!empty($config['author'])) ? ' by '.ucwords($data['created_by_alias']) : ''; ?></span>
+							</span>
+							<?php
+						}
 
-		        if( !empty($config['tag']) )
+						if( !empty($config['tag']) )
 						{
 							?>
 							<div class="text-left">
@@ -175,22 +175,22 @@
 							</div>
 							<?php
 						}
-		        ?>
-		      </div>
-		    </div>
+						?>
+					</div>
+				</div>
 			<?php
 		}
 		?>
-  </div>
+	</div>
 </div>
 <?php
 	if ($config['cat_id'] > 0)
 	{
 		?>
 		<div class="row">
-		  <div class="col-md-12" align="center" style="margin: 60px 0 0 0;">
-		    <a href="<?php echo _URL.'id.htm?cat_id='.$config['cat_id']; ?>" style="color:#774500;"><?php echo lang('See More %s ', @ucwords($cat['title'])) ?><i class="fa fa-arrow-right" aria-hidden="true" style="color: #774500;"></i></a>
-		  </div>
+			<div class="col-md-12" align="center" style="margin: 60px 0 0 0;">
+				<a href="<?php echo _URL.'id.htm?cat_id='.$config['cat_id']; ?>" style="color:#774500;"><?php echo lang('See More %s ', @ucwords($cat['title'])) ?><i class="fa fa-arrow-right" aria-hidden="true" style="color: #774500;"></i></a>
+			</div>
 		</div>
 		<?php
 	}

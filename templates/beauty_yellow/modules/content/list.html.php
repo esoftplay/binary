@@ -1,8 +1,8 @@
 <?php  if (!defined('_VALID_BBC')) exit('No direct script access allowed'); ?>
 <div class="row">
-  <div class="col-md-12">
-    <h2><?php echo $cat['title']; ?></h2>
-  </div>
+	<div class="col-md-12">
+		<h2><?php echo $cat['title']; ?></h2>
+	</div>
 </div>
 <div class="row">
 	<div class="col-md-12 pb-4">
@@ -31,42 +31,42 @@
 			{
 				?>
 				<div class="row">
-				  <div class="col-md-1"></div>
-				  <div class="col-md-10" align="center">
-				    <?php echo content_src($data['image'], true, false) ?>
-				  </div>
-				  <div class="col-md-1"></div>
+					<div class="col-md-1"></div>
+					<div class="col-md-10" align="center">
+						<?php echo content_src($data['image'], true, false) ?>
+					</div>
+					<div class="col-md-1"></div>
 				</div>
 				<?php
 			}
 			?>
 			<div class="row d-flex-c">
-			  <div class="col-md-1"></div>
-			  <div class="col-md-10" style="display: unset;">
-			  	<?php
+				<div class="col-md-1"></div>
+				<div class="col-md-10" style="display: unset;">
+					<?php
 					if(!empty($config['title']))
 					{
 						if(!empty($config['title_link']))
 						{
 							?>
 							<a href="<?php echo $link;?>" title="<?php echo $data['title'];?>"><h4><?php echo $data['title'];?></h4></a>
-			        <?php
-			      }else{
-			      	?>
-			      	<h4><?php echo $data['title'];?></h4>
-			        <?php
-			      }
+							<?php
+						}else{
+							?>
+							<h4><?php echo $data['title'];?></h4>
+							<?php
+						}
 					}
 
 					if(	!empty($config['created']) || !empty($config['author'] ))
 					{
 						?>
-				    <span><?php echo (!empty($config['created'])) ? content_date($data['created']) : '' ?> <?php echo (!empty($config['author'])) ? lang('by') : '' ?> <span style="font-weight: bold"><?php echo (!empty($config['author'])) ? $data['created_by_alias'] : '' ?></span></span>
+						<span><?php echo (!empty($config['created'])) ? content_date($data['created']) : '' ?> <?php echo (!empty($config['author'])) ? lang('by') : '' ?> <span style="font-weight: bold"><?php echo (!empty($config['author'])) ? $data['created_by_alias'] : '' ?></span></span>
 						<?php
 					}
-			  	?>
-			    <p></p>
-			    <p style="text-align: left!important;">
+					?>
+					<p></p>
+					<p style="text-align: left!important;">
 						<?php echo nl2br(strip_tags($data['intro']));?>
 						<?php echo (!empty($config['read_more'])) ? '<a href="'.$link.'" class="readmore">'.lang('Read more').'</a>' : '';?>
 						<?php
@@ -112,53 +112,53 @@
 								<?php
 							}
 						?>
-			    </p>
-			  </div>
-			  <div class="col-md-1"></div>
+					</p>
+				</div>
+				<div class="col-md-1"></div>
 			</div>
 			<?php
 		}else{
 			?>
 			<div class="row">
-			  <div class="col-md-1"></div>
+				<div class="col-md-1"></div>
 				<?php
 				$col1 = 0;
 				if ((!empty($config['thumbnail']) && !empty($data['image'])))
 				{
 					$col1 = 4;
 					?>
-				  <div class="col-md-<?php echo $col1 ?> p-news">
-				    <?php echo content_src($data['image'], true, false) ?>
-				  </div>
+					<div class="col-md-<?php echo $col1 ?> p-news">
+						<?php echo content_src($data['image'], true, false) ?>
+					</div>
 					<?php
 				}
 
 				$col2 = 12 - $col1 - 2;
 				?>
-			  <div class="col-md-<?php echo $col2?> f-news">
-			  	<?php
+				<div class="col-md-<?php echo $col2?> f-news">
+					<?php
 					if(!empty($config['title']))
 					{
 						if(!empty($config['title_link']))
 						{
 							?>
 							<a href="<?php echo $link;?>" title="<?php echo $data['title'];?>"><h4><?php echo $data['title'];?></h4></a>
-			        <?php
-			      }else{
-			      	?>
-			      	<h4><?php echo $data['title'];?></h4>
-			        <?php
-			      }
+							<?php
+						}else{
+							?>
+							<h4><?php echo $data['title'];?></h4>
+							<?php
+						}
 					}
 					if(	!empty($config['created']) || !empty($config['author'] ))
 					{
 						?>
-				    <span><?php echo (!empty($config['created'])) ? content_date($data['created']) : '' ?> <?php echo (!empty($config['author'])) ? lang('by') : '' ?> <span style="font-weight: bold"><?php echo (!empty($config['author'])) ? $data['created_by_alias'] : '' ?></span></span>
+						<span><?php echo (!empty($config['created'])) ? content_date($data['created']) : '' ?> <?php echo (!empty($config['author'])) ? lang('by') : '' ?> <span style="font-weight: bold"><?php echo (!empty($config['author'])) ? $data['created_by_alias'] : '' ?></span></span>
 						<?php
 					}
-			  	?>
-			  	<p></p>
-			    <p style="text-align: justify;">
+					?>
+					<p></p>
+					<p style="text-align: justify;">
 						<?php echo nl2br(strip_tags($data['intro']));?>
 						<?php echo (!empty($config['read_more'])) ? '<a href="'.$link.'" class="readmore">'.lang('Read more').'</a>' : '';?>
 						<?php
@@ -204,8 +204,8 @@
 								<?php
 							}
 						?>
-			    </p>
-			  </div>
+					</p>
+				</div>
 			</div>
 			<?php
 		}

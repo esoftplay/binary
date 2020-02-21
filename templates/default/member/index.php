@@ -27,7 +27,7 @@
 				        		$user->image = $sys->template_url.'images/avatar.png';
 				        	}
 				        	?>
-				          <img src="<?php echo $user->image; ?>" alt="" style="height: 50px;" />
+				          <img src="<?php echo $user->image; ?>" alt="" />
 				        </div>
 			      	</a>
 			      </div>
