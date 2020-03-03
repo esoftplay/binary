@@ -6,11 +6,13 @@ if (empty($datas))
 	$total = count($datas);
 }
 ?>
+<div class="jumbotron text-center">
+	<h2><?php echo lang('Our Testimonial'); ?></h2>
+</div>
 <div class="content testi">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2><?php echo lang('Testimonial Member'); ?></h2>
       </div>
     </div>
 		<?php
@@ -66,3 +68,17 @@ if (empty($datas))
 		?>
   </div>
 </div>
+<section class="join_us">
+  <div class="container-fluid text-center">
+      <div class="row justify-content-center">
+          <div class="col-lg">
+              <h3><?php echo lang('#Bergabunglah dan Sukses Bersama Kami') ; ?> </h3>       
+          </div>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-lg">
+              <a href="<?php echo site_url('bin/register'); ?>"><button type="button" class="btn btn-warning">Join Now</button></a>
+          </div>
+      </div>
+  </div>
+</section>

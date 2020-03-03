@@ -2,14 +2,14 @@
 ?>
 <div class="content">
 	<div class="about">
-	  <div class="container">
-	  	<div class="row">
-	      <div class="col-md-12 text-center">
-	       <?php echo !empty($config['title']) ? '<h2>'.$data['title'].'</h2>' : ''; ?>
-	      </div>
-	    </div>
-	    <div class="row">
-	    	<div class="col-md-12">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<?php echo !empty($config['title']) ? '<h2>'.$data['title'].'</h2>' : ''; ?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
 					<?php
 						if(	!empty($config['created']) || !empty($config['author']) )
 						{
@@ -141,9 +141,9 @@
 							);
 						echo _class('comment', $cfg)->show();
 					?>
-	    	</div>
-	    </div>
-	  </div>
-  </div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <?php

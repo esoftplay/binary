@@ -694,8 +694,7 @@ table.table td:last-child {
 }
 
 table.table td a {
-	color: blue;
-	text-decoration: underline;
+	color: #a0a5b1;
 	display: inline-block;
 	margin: 0 5px;
 }

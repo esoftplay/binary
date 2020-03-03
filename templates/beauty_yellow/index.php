@@ -25,33 +25,23 @@
 				</div>
 			</div>
 		</nav>
-		<?php echo $sys->block_show('top');?>
-		<?php echo $sys->block_show('content_top');?>
-		<?php $is_home = _ADMIN != '' || @$_GET['menu_id']==-1 ? true : false; ?>
-		<?php $classes = $is_home ? 'about-index' : 'page' ?>
-		<section class="<?php echo $classes?>">
-			<div class="container<?php $is_home ? '' : ' d-flex-c'?>">
-				<?php echo trim($Bbc->content);?>
-			</div>
-			<div class="clearfix"></div>
-		</section>
-		<?php echo $sys->block_show('content_bottom');?>
-		<?php
-		$bottom = trim($sys->block_show('bottom'));
-		if (!empty($bottom))
+		<?php 
+		echo $sys->block_show('content_top');
+		$is_home = _ADMIN != '' || @$_GET['menu_id']==-1 ? true : false; 
+		$classes = $is_home ? 'about-index' : 'page'; 
+		if(!@$Bbc->no_container) 
 		{
 			?>
-			<section class="stat-index">
-				<div class="container">
-					<div class="row py-5">
-						<?php echo $sys->block_show('bottom');?>
-					</div>
+			<section class="<?php echo $classes?>">
+				<div class="container<?php $is_home ? '' : ' d-flex-c'?>">
+					<?php echo trim($Bbc->content);?>
 				</div>
+				<div class="clearfix"></div>
 			</section>
-			<?php
-		}
+			<?php 
+		}else echo trim($Bbc->content); 
+		echo $sys->block_show('content_bottom');
 		?>
-		<?php echo $sys->block_show('bottom_2');?>
 		<div class="footer">
 			<div class="container">
 				<div class="row">

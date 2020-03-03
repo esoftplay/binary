@@ -1,7 +1,7 @@
 <?php  if (!defined('_VALID_BBC')) exit('No direct script access allowed');?>
 <div class="row">
 	<div class="col-md-12">
-		<h2><?php echo lang('Testimonial Member'); ?></h2>
+		<h2><?php echo lang('Our Testimonial'); ?></h2>
 	</div>
 </div>
 <?php

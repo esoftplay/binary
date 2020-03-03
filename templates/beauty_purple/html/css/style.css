@@ -963,6 +963,12 @@ h2 {
 	}
 }
 
+@media (min-width: 1920px) {
+	.pageLogin {
+		padding: 180px 15px 18%;
+	}
+}
+
 
 
 /*Scroll Top*/

@@ -42,8 +42,19 @@ if (!empty($arr))
 										<?php echo (!empty($config['thumbnail'])) ? content_src($data['image'], ' class="img-responsive" title="'.$data['title'].'" alt="'.$data['title'].'"') : '';?>
 									</div>
 									<div class="col-md-8">
-										<p><?php echo $data['content'];?>
-											<?php 
+										<?php 
+											if (str_word_count($data['content']) > 7 ) 
+											{
+												$words = explode(" ",$data['content']);
+												echo "<p>";
+												echo implode(" ",array_splice($words,0,80));
+												echo "</p>";
+												echo "<br>";
+											}else{
+												?>
+												<p><?php echo $data['content']; ?></p>
+												<?php
+											}
 											if (!empty($config['read_more']))
 											{
 												?>

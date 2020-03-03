@@ -9,6 +9,10 @@
 	margin: 10px 0 !important;
 }
 
+/*LOGIN PAGE*/
+.pageLogin {
+	background-image: url(../html/img/image1.png);
+}
 .login_button {
   float: right;
   padding: 12px 0;
@@ -23,6 +27,7 @@
   background-color: #f9d400;
   color: #774500;
 }
+
 .button_primary {
 	background-color: #f9d400 !important;
 	color: #774500 !important;

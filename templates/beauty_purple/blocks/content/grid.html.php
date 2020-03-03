@@ -12,39 +12,39 @@ if (!empty($cat['list']))
 			<div class="col-lg-4 text-center">
 				<?php
 				if (!empty($config['thumbnail']) && !empty($data['image']))
-	    	{
-		  		echo content_src($data['image'], ' class="img-responsive" alt="'.$data['title'].'" style="height: 200px;"', false);
-	    	}
+				{
+					echo content_src($data['image'], ' class="img-responsive" alt="'.$data['title'].'" style="height: 200px;"', false);
+				}
 
-	    	if(!empty($config['title']))
-	    	{
-	    		if(!empty($config['title_link']))
-	    		{
-	    			?>
-	    			<a href="<?php echo $link;?>" title="<?php echo $data['title'];?>"><h5><?php echo $data['title'];?></h5></a>
-	    			<?php
-	    		}else{
-	    			?>
-		        <h5><?php echo $data['title'];?></h5>
-	    			<?php
-	    		}
-	    	}
-	    	?>
-	    	<p style="font-style: italic;"><?php echo @$data[$config['intro']];?></p>
-	      <?php echo (!empty($config['read_more'])) ? '<a href="'.$link.'" class="readmore text_green">'.lang('Read more').'</a>' : '';?>
-	      <div class="clearfix"></div>
-	      <?php
-	      if(	!empty($config['created']) || !empty($config['author'] ))
-	      {
-	      	?>
-	        <span>
-	        	<?php echo (!empty($config['created'])) ? content_date($data['created']) : ''; ?> 
-	        	<span style="font-weight: bold; color: #8062ef;"><?php echo (!empty($config['author'])) ? ' by '.ucwords($data['created_by_alias']) : ''; ?></span>
-		      </span>
-	      	<?php
-	      }
+				if(!empty($config['title']))
+				{
+					if(!empty($config['title_link']))
+					{
+						?>
+						<a href="<?php echo $link;?>" title="<?php echo $data['title'];?>"><h5><?php echo $data['title'];?></h5></a>
+						<?php
+					}else{
+						?>
+						<h5><?php echo $data['title'];?></h5>
+						<?php
+					}
+				}
+				?>
+				<p style="font-style: italic;"><?php echo @$data[$config['intro']];?></p>
+				<?php echo (!empty($config['read_more'])) ? '<a href="'.$link.'" class="readmore text_green">'.lang('Read more').'</a>' : '';?>
+				<div class="clearfix"></div>
+				<?php
+				if(	!empty($config['created']) || !empty($config['author'] ))
+				{
+					?>
+					<span>
+						<?php echo (!empty($config['created'])) ? content_date($data['created']) : ''; ?> 
+						<span style="font-weight: bold; color: #8062ef;"><?php echo (!empty($config['author'])) ? ' by '.ucwords($data['created_by_alias']) : ''; ?></span>
+					</span>
+					<?php
+				}
 
-	      if( !empty($config['tag']) )
+				if( !empty($config['tag']) )
 				{
 					?>
 					<div class="text-left">
@@ -85,7 +85,7 @@ if (!empty($cat['list']))
 					</div>
 					<?php
 				}
-	      ?>
+				?>
 			</div>
 			<?php
 		}
@@ -97,9 +97,9 @@ if (!empty($cat['list']))
 	{
 		?>
 		<div class="row">
-		  <div class="col-md-12" align="center">
-		    <a href="<?php echo _URL.'id.htm?cat_id='.$config['cat_id']; ?>" style="color: #8062ef;"><?php echo lang('See More %s ', @ucwords($cat['title'])) ?><i class="fa fa-arrow-right"></i></a>
-		  </div>
+			<div class="col-md-12" align="center">
+				<a href="<?php echo _URL.'id.htm?cat_id='.$config['cat_id']; ?>" style="color: #8062ef;"><?php echo lang('See More %s ', @ucwords($cat['title'])) ?><i class="fa fa-arrow-right"></i></a>
+			</div>
 		</div>
 		<?php
 	}

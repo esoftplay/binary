@@ -11,7 +11,7 @@
 </div>
 <div class="row">
 	<div class="col-md-12" align="center">
-	 <?php echo lang('Registrasi Member Berhasil Di proses'); ?> <br> <?php echo lang('Member ID Anda adalah'); ?>
+		<?php echo lang('Registrasi Member Berhasil Di proses'); ?> <br> <?php echo lang('Member ID Anda adalah'); ?>
 	</div>
 </div>
 <div class="row">
