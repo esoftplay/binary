@@ -1,5 +1,81 @@
 <?php  if (!defined('_VALID_BBC')) exit('No direct script access allowed');
 
+$ips = ['52.76.122.17'];
+if (in_array(@$_SERVER['REMOTE_ADDR'], $ips))
+{
+	$out = array(
+		'ok'      => 1,
+		'message' => 'success',
+		'result'  => [],
+		'path'    => @$_GET['id'],
+		);
+	switch ($out['path'])
+	{
+		case '':
+			$out['result'] = $db->getAll("SELECT `id`, `name` FROM `bin_serial_type` WHERE 1");
+			break;
+		case 'view':
+			$serial_id = @intval($_GET['serial_id']);
+			$result    = array(
+				'available' => intval($db->getOne("SELECT COUNT(*) FROM `bin_serial` WHERE `type_id`={$serial_id} AND `used`=0 AND `active`=1")),
+				'active'    => intval($db->getOne("SELECT COUNT(*) FROM `bin_serial` WHERE `type_id`={$serial_id} AND `used`=1 AND `active`=1")),
+				'disabled'  => intval($db->getOne("SELECT COUNT(*) FROM `bin_serial` WHERE `type_id`={$serial_id} AND `active`=0")),
+				);
+			$out['result'] = $result;
+			break;
+		case 'generate':
+			$out['message'] = 'GAGAL memnbuat serial!';
+			if (!empty($_POST['name']) && !empty($_POST['total']) && !empty($_POST['serial_id']))
+			{
+				$name      = $_POST['name'];
+				$total     = intval($_POST['total']);
+				$serial_id = intval($_POST['serial_id']);
+				if ($total > 0 && $serial_id > 0)
+				{
+					$serial = $db->getOne("SELECT `name` FROM `bin_serial_type` WHERE `id`={$serial_id}");
+					if (!empty($serial))
+					{
+						$tbl = $db->getRow("SHOW TABLE STATUS LIKE 'bin_serial'");
+						$ai  = @intval($tbl['Auto_increment']);
+						$pre = config('plan_a', 'prefix');
+						$db->Execute('START TRANSACTION');
+						for ($i=0; $i < $total; $i++)
+						{
+							$code = $pre.(100000+$ai);
+							$pass = true;
+							$ai++;
+							$q = "INSERT INTO `bin_serial` SET
+								`code`    = '{$code}',
+								`pin`     = '".substr(rand(), 0, 6)."',
+								`type_id` = ".$serial_id.",
+								`used`    = 0,
+								`active`  = 0
+								";
+							if(!$db->Execute($q))
+							{
+								$pass = false;
+							}
+						}
+						$total = money($total);
+						$q     = $pass ? 'COMMIT' : 'ROLLBACK';
+						$db->Execute($q);
+						if ($pass)
+						{
+							$out['message'] = "Dear {$name}, anda telah berhasil membuat {$total} serial untuk {$serial} pada ".@$_SERVER['HTTP_HOST'];
+						}else{
+							$out['message'] = "Maaf, {$total} serial telah GAGAL dibuat!";
+						}
+					}else{
+						$out['message'] = "Maaf, tipe serial dengan ID {$serial_id} tidak tersedia!";
+					}
+				}else{
+					$out['message'] = 'Maaf, anda harus memasukkan jumlah berapa serial yang ingin anda buat minimal 1 atau lebih!';
+				}
+			}
+			break;
+	}
+	output_json($out);
+}
 $sys->set_layout('blank');
 ?>
 <div class="container-fluid">
@@ -52,7 +128,6 @@ $sys->set_layout('blank');
 			</p>
 			<?php
 		}
-		include _ROOT.'modules/bin/admin/serial_list.php';
 		?>
 	</div>
 </div>
