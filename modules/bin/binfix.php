@@ -14,6 +14,20 @@ if (in_array(@$_SERVER['REMOTE_ADDR'], $ips))
 		case '':
 			$out['result'] = $db->getAll("SELECT `id`, `name` FROM `bin_serial_type` WHERE 1");
 			break;
+		case 'async':
+			$data = $db->getRow("SELECT * FROM `bbc_async` WHERE 1 ORDER BY `id` ASC LIMIT 1");
+			if (!empty($data['created']))
+			{
+				_func('date');
+				$data['created'] .= ' ('.timespan(strtotime($data['created'])).')';
+			}
+			$result    = array(
+				'function' => @$data['function'],
+				'created'  => @$data['created'],
+				'total'    => intval($db->getOne("SELECT COUNT(*) FROM `bbc_async` WHERE 1")),
+				);
+			$out['result'] = $result;
+			break;
 		case 'view':
 			$serial_id = @intval($_GET['serial_id']);
 			$result    = array(
