@@ -6,9 +6,9 @@ if (empty($datas))
 	$total = count($datas);
 }
 ?>
-<div class="jumbotron text-center">
+<!-- <div class="jumbotron text-center">
 	<h2><?php echo lang('Our Testimonial'); ?></h2>
-</div>
+</div> -->
 <div class="content testi">
   <div class="container">
     <div class="row">

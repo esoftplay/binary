@@ -1,15 +1,13 @@
 <?php  if (!defined('_VALID_BBC')) exit('No direct script access allowed');
 
 ?>
-<div class="contact">
+<div class="contact content">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 text-center">
-				<?php echo !empty($config['title']) ? '<h2>'.$data['title'].'</h2>' : ''; ?>
-			</div>
-		</div>
-		<div class="row">
 			<div class="col-md-12">
+				<div class="col-md-12 text-center">
+					<?php echo !empty($config['title']) ? '<h2>'.$data['title'].'</h2>' : ''; ?>
+				</div>
 				<?php
 					if(	!empty($config['created']) || !empty($config['author']) )
 					{

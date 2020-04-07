@@ -67,29 +67,31 @@ switch (@intval($_SESSION['bin_register']['step'])) {
 		break;
 }
 ?>
-<form method="POST" action="" id="member_reg" name="member_reg" class="formIsRequire" enctype="multipart/form-data" role="form">
-	<div class="content registrasi">
-		<div class="container">
-			<div class="row text-center formTitle">
-				<div class="col-md-12">
-					<span><?php echo lang('Registrasi Member').$btn_link; ?></span>
-				</div>
-			</div>
-			<div class="row regIcon">
-				<div class="col-md-12 text-center">
-					<img src="<?php echo $sys->template_url; ?>html/img/registrasi/icon1.png" alt="">
-					<img src="<?php echo $sys->template_url; ?>html/img/registrasi/icon2.png" alt="">
-					<img src="<?php echo $sys->template_url; ?>html/img/registrasi/icon3.png" alt="">
-				</div>
-			</div>
-			<div class="row prBar">
-				<div class="col-md-12">
-					<div class="progress">
-						<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $progress_bar_width; ?>%;"></div>
+<section class="contentReg">
+	<form method="POST" action="" id="member_reg" name="member_reg" class="formIsRequire" enctype="multipart/form-data" role="form">
+		<div class="content registrasi">
+			<div class="container">
+				<div class="row text-center formTitle">
+					<div class="col-md-12">
+						<h6><?php echo lang('Registrasi Member').$btn_link; ?></h6>
 					</div>
 				</div>
+				<div class="row regIcon">
+					<div class="col-md-12 text-center">
+						<img src="<?php echo $sys->template_url; ?>html/img/registrasi/icon1.png" alt="">
+						<img src="<?php echo $sys->template_url; ?>html/img/registrasi/icon2.png" alt="">
+						<img src="<?php echo $sys->template_url; ?>html/img/registrasi/icon3.png" alt="">
+					</div>
+				</div>
+				<div class="row prBar">
+					<div class="col-md-12">
+						<div class="progress">
+							<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $progress_bar_width; ?>%;"></div>
+						</div>
+					</div>
+				</div>
+				<?php include tpl('register'.@intval($_SESSION['bin_register']['step']).'.html.php'); ?>
 			</div>
-			<?php include tpl('register'.@intval($_SESSION['bin_register']['step']).'.html.php'); ?>
 		</div>
-	</div>
-</form>
+	</form>	
+</section>

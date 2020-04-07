@@ -21,13 +21,6 @@
 			</div>
 		</nav>
 		<?php 
-		$is_home = _ADMIN != '' || @$_GET['menu_id']==-1 ? true : false;
-		if (!$is_home)
-		{
-			?>
-			<!-- <div class="jumbotron text-center"></div> -->
-			<?php
-		}
 		echo $sys->block_show('content_top');
 		echo trim($Bbc->content); 
 		echo $sys->block_show('content_bottom');
