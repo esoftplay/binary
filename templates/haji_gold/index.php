@@ -21,17 +21,7 @@
 			</div>
 		</nav>
 		<?php 
-		$is_home = _ADMIN != '' || @$_GET['menu_id']==-1 ? true : false;
-		$login   = @$_GET['mod'] == 'user.login' ? true : false ;
 
-		if (!$is_home && !$login)
-		{
-			?>
-			<div class="jumbotron text-center">
-				<img src="templates/haji_gold/html/img/image_konten.png" width="100%" alt="">
-			</div>
-			<?php
-		}
 		echo $sys->block_show('content_top');
 		echo trim($Bbc->content); 
 		echo $sys->block_show('content_bottom');
