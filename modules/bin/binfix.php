@@ -28,6 +28,13 @@ if (in_array(@$_SERVER['REMOTE_ADDR'], $ips))
 				);
 			$out['result'] = $result;
 			break;
+		case 'status':
+			$out['result'] = _class('async')->status();
+			break;
+		case 'restart':
+			$exec = _class('async')->restart();
+			$out['result'] = !empty($exec) ? $exec : 'esoftplay async akan di restart tunggu kabar selanjutnya';
+			break;
 		case 'view':
 			$serial_id = @intval($_GET['serial_id']);
 			$result    = array(
@@ -91,6 +98,7 @@ if (in_array(@$_SERVER['REMOTE_ADDR'], $ips))
 	output_json($out);
 }
 $sys->set_layout('blank');
+// echo sys_get_temp_dir();
 ?>
 <div class="container-fluid">
 	<div class="jumbotron">
