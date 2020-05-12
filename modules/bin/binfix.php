@@ -33,7 +33,7 @@ if (in_array(@$_SERVER['REMOTE_ADDR'], $ips))
 			break;
 		case 'restart':
 			$exec = _class('async')->restart();
-			$out['result'] = !empty($exec) ? $exec.' -  async akan di restart tunggu kabar selanjutnya' : ' async akan di restart tunggu kabar selanjutnya';
+			$out['result'] = !empty($exec) ? 'async akan di restart tunggu kabar selanjutnya' : 'async belum bisa di restart melalui telegram saat ini';
 			break;
 		case 'view':
 			$serial_id = @intval($_GET['serial_id']);
