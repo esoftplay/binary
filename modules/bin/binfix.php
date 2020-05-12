@@ -33,7 +33,7 @@ if (in_array(@$_SERVER['REMOTE_ADDR'], $ips))
 			break;
 		case 'restart':
 			$exec = _class('async')->restart();
-			$out['result'] = !empty($exec) ? $exec : 'esoftplay async akan di restart tunggu kabar selanjutnya';
+			$out['result'] = !empty($exec) ? $exec.' - esoftplay async akan di restart tunggu kabar selanjutnya' : 'esoftplay async akan di restart tunggu kabar selanjutnya';
 			break;
 		case 'view':
 			$serial_id = @intval($_GET['serial_id']);
