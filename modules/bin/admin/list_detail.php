@@ -87,11 +87,11 @@ if (!empty($id))
 	$form->edit->addInput('location_latlong','sqlplaintext');
 	$form->edit->input->location_latlong->setTitle('Latitude Longitude');
 
-	$form->edit->addInput('serial_pin','sqlplaintext', 2);
-	$form->edit->input->serial_pin->setTitle('PIN');
-
 	if (_ADMIN!='')
 	{
+		$form->edit->addInput('serial_pin','sqlplaintext', 2);
+		$form->edit->input->serial_pin->setTitle('PIN');
+
 		$form->edit->addInput('balance','sqlplaintext', 2);
 		$form->edit->input->balance->setTitle('Saldo');
 		$form->edit->input->balance->setNumberFormat();
