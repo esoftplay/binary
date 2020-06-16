@@ -32,8 +32,13 @@ if (in_array(@$_SERVER['REMOTE_ADDR'], $ips))
 			$out['result'] = _class('async')->status();
 			break;
 		case 'restart':
-			$exec = _class('async')->restart();
-			$out['result'] = !empty($exec) ? 'async akan di restart tunggu kabar selanjutnya' : 'async belum bisa di restart melalui telegram saat ini';
+			if (file_exists('/tmp/tmp.sh'))
+			{
+				$out['result'] = 'proses restart masih dalam antrian';
+			}else{
+				$exec = _class('async')->restart();
+				$out['result'] = !empty($exec) ? 'async akan di restart tunggu kabar selanjutnya' : 'async belum bisa di restart melalui telegram saat ini';
+			}
 			break;
 		case 'view':
 			$serial_id = @intval($_GET['serial_id']);

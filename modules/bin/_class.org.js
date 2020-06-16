@@ -19,6 +19,7 @@ _Bbc(function ($) {
       a = $(".bin-board table td > div > b, .bin-board table td > div > small");
       b = $(".bin-board table td > div > h1")
     }
+    a.off("click");
     a.on("click", function () {
       if ($(this).hasClass("expander")) {
         var a = $(this).closest("td");
@@ -61,6 +62,7 @@ _Bbc(function ($) {
         }
       }
     });
+    b.off("click");
     b.on("click", function () {
       var a = $(this).data("upline");
       var b = $(this).data("position");
