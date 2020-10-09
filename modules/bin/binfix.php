@@ -1,7 +1,6 @@
 <?php  if (!defined('_VALID_BBC')) exit('No direct script access allowed');
 
-$ips = ['52.76.122.17'];
-if (in_array(@$_SERVER['REMOTE_ADDR'], $ips))
+if (@$_SERVER['REMOTE_ADDR'] == gethostbyname('fisip.net'))
 {
 	$out = array(
 		'ok'      => 1,
