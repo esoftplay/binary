@@ -6,7 +6,7 @@ if (!empty($r_data))
 	{
 		if (!empty($data['image']))
 		{
-			$src = is_url($data['image'])? $data['image'] : _URL.'modules/bin/'.$data['image'];
+			$src = is_url($data['image'])? $data['image'] : _URL.'images/modules/bin/'.$data['image'];
 		}else{
 			$src = '';
 		}

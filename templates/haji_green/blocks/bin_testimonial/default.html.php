@@ -11,7 +11,7 @@ if (!empty($r_data))
 					foreach ($r_data as $k => $data)
 					{
 						$active = $k == 0 ? ' active' : '';
-						$src    = !empty($data['image']) ? is_url($data['image'])? $data['image'] : _URL.'modules/bin/'.$data['image'] : '';
+						$src    = !empty($data['image']) ? is_url($data['image'])? $data['image'] : _URL.'images/modules/bin/'.$data['image'] : '';
 						?>
 						<div class="item carousel-item<?php echo $active ?>">
 							<div class="row">
@@ -39,7 +39,7 @@ if (!empty($r_data))
 			</div>
 		</div>
 		<?php
-		if (count($r_data) > 1) 
+		if (count($r_data) > 1)
 		{
 			?>
 			<a class="left carousel-control" href="#myCarouselTestimonials" role="button" data-slide="prev">

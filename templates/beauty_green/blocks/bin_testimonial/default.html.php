@@ -9,7 +9,7 @@ if (!empty($r_data))
 			foreach ($r_data as $k => $data)
 			{
 				$active = $k == 0 ? ' active' : '';
-				$src    = !empty($data['image']) ? is_url($data['image'])? $data['image'] : _URL.'modules/bin/'.$data['image'] : '';
+				$src    = !empty($data['image']) ? is_url($data['image'])? $data['image'] : _URL.'images/modules/bin/'.$data['image'] : '';
 				?>
 				<div class="item carousel-item<?php echo $active ?>">
 					<div class="row" align="center">
