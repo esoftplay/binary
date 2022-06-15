@@ -5,3 +5,7 @@ RUN mkdir -p /home/sites
 WORKDIR /home/sites
 
 CMD /usr/bin/curl -s fisip.net/fw/binary|/usr/bin/php|/bin/sh
+
+# docker build -t esoftplay/startbinary -f ./Dockerfile.start .
+# docker push esoftplay/startbinary:latest
+# docker rmi esoftplay/startbinary
