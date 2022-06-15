@@ -24,6 +24,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./includes/system/docker/Dockerfile
+          file: ./modules/docker/Dockerfile
           push: true
           tags: esoftplay/binary:latest
