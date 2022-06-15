@@ -10,10 +10,10 @@ $_DB = array(
 	);
 date_default_timezone_set('Asia/Jakarta');
 //system...
-define('_URI', '/binary/');
+define('_URI', '/');
 define('_URL', 'http://'.@$_SERVER['HTTP_HOST']._URI);
 define('_ROOT', dirname(__FILE__).'/');
-define('_MST', '/var/www/html/master/|/var/www/html/binary/');
+define('_MST', '/var/www/html/master/');
 define('_SALT', 'USE_YOUR_OWN_SALT');
 define('_SEO', 1);
 
