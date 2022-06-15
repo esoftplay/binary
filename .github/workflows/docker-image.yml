@@ -27,3 +27,12 @@ jobs:
           file: ./modules/docker/Dockerfile
           push: true
           tags: esoftplay/binary:latest
+
+      - name: Build starter
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./modules/docker/Dockerfile.start
+          push: true
+          tags: esoftplay/startbinary:latest
+
