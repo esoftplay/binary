@@ -7,7 +7,7 @@ if (!empty($cat['list']) && is_array($cat['list']))
 		<?php
 		foreach ($cat['list'] as $k => $data)
 		{
-			$cls = ($k+1)%3 == 0 ? ' shadowRight' : ($k+1)%2 == 0 ? ' shadowCenter' : ' shadowLeft';
+			$cls = (($k+1)%3 == 0) ? ' shadowRight' : ($k+1)%2 == 0 ? ' shadowCenter' : ' shadowLeft';
 			$edit_data = (content_posted_permission() && $user->id == $data['created_by']) ? 1 : 0;
 			$link = content_link($data['id'], $data['title']);
 			?>
