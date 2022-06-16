@@ -2,7 +2,7 @@
 // database
 $_DB = array(
 	array(
-		'SERVER'   => 'localhost',
+		'SERVER'   => 'sql',
 		'USERNAME' => 'root',
 		'PASSWORD' => 'root',
 		'DATABASE' => 'binary'
