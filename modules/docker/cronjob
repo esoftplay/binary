@@ -1,0 +1,1 @@
+* * * * * /usr/bin/curl -s http://localhost/bin/fix 2>&1 > /dev/null
