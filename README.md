@@ -54,8 +54,5 @@ docker-compose up -d
  * open url http://localhost/
  * edit the script if necessary
 
-# Cronjob
- * `* * * * * /usr/bin/curl http://localhost/bin/fix`
-
 # Learn more about the this framework
  * http://dev.esoftplay.com
